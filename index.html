@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PocketMind Hybrid AI — Downloads</title>
-  <meta name="description" content="Download PocketMind Hybrid AI for Windows (x64). Private hybrid AI workspace." />
+  <title>PocketMind — Downloads &amp; Privacy</title>
+  <meta name="description" content="PocketMind product downloads and privacy policies, including Code Review Assistant." />
   <style>
     :root {
       --bg0: #070a0c;
@@ -15,8 +15,10 @@
       --accent: #22c55e;
       --accent-dim: #16a34a;
       --card: #0c1210;
+      --teal: #2bb0a6;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
@@ -32,6 +34,18 @@
       margin: 0 auto;
       padding: 4rem 0 5rem;
     }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.88rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    nav a:hover { color: var(--accent); }
     .brand {
       font-size: 0.8rem;
       letter-spacing: 0.14em;
@@ -45,6 +59,14 @@
       line-height: 1.15;
       margin: 0 0 0.75rem;
       font-weight: 800;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin: 0 0 0.75rem;
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 1.35rem 0 0.45rem;
     }
     .lead {
       color: var(--muted);
@@ -60,11 +82,11 @@
       padding: 1.25rem 1.35rem;
       margin-bottom: 1rem;
     }
-    .card h2 {
+    .card > h2 {
       margin: 0 0 0.35rem;
       font-size: 1.05rem;
     }
-    .card p {
+    .card > p {
       margin: 0 0 1rem;
       color: var(--muted);
       font-size: 0.92rem;
@@ -123,24 +145,53 @@
       font-size: 0.88rem;
       line-height: 1.5;
     }
+    #privacy-policy {
+      scroll-margin-top: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 0.5rem;
+    }
+    #privacy-policy .policy-body {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    #privacy-policy .policy-body ul {
+      margin: 0.4rem 0 0.8rem 1.1rem;
+      padding: 0;
+    }
+    #privacy-policy .policy-body li { margin: 0.3rem 0; }
+    #privacy-policy .policy-body strong { color: var(--text); }
+    #privacy-policy .policy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    #privacy-policy a { color: var(--teal); }
     footer {
       margin-top: 2.5rem;
       color: #6d8074;
       font-size: 0.8rem;
     }
+    footer a { color: var(--muted); }
   </style>
 </head>
 <body>
   <main>
-    <p class="brand">PocketMind Hybrid AI</p>
-    <h1>Windows downloads</h1>
+    <nav aria-label="Site">
+      <a href="#downloads">Downloads</a>
+      <a href="#privacy-policy">Privacy policy</a>
+    </nav>
+
+    <p class="brand">PocketMind</p>
+    <h1 id="downloads">Windows downloads</h1>
     <p class="lead">
-      Official host for the Windows x64 installers. Use the NSIS setup link as the
-      Microsoft Store package URL.
+      Official host for PocketMind Windows packages. Use the NSIS setup link as the
+      Microsoft Store package URL for Hybrid AI.
     </p>
 
     <section class="card">
-      <h2>Recommended — NSIS Setup (Store package)</h2>
+      <h2>PocketMind Hybrid AI — NSIS Setup (Store package)</h2>
       <p>Silent install switch: <span class="url">/S</span>. Architecture: x64. Version 1.0.0.</p>
       <div class="meta">
         <span class="pill">EXE installer</span>
@@ -176,13 +227,80 @@
     </section>
 
     <p class="note">
-      After installing, add your GGUF models under the app data / models folder shown in Settings.
+      After installing Hybrid AI, add your GGUF models under the app data / models folder shown in Settings.
       Local inference also needs llama.cpp runtimes (CPU/CUDA/Vulkan) from the desktop payload package.
     </p>
 
+    <section id="privacy-policy" class="card" aria-labelledby="privacy-heading">
+      <p class="brand" style="margin-bottom:0.35rem">Code Review Assistant</p>
+      <h2 id="privacy-heading">Privacy policy</h2>
+      <div class="policy-meta">
+        <span class="pill">Publisher: PocketMind</span>
+        <span class="pill">Last updated: 2026-09-18</span>
+      </div>
+      <div class="policy-body">
+        <p>
+          This privacy policy applies to the <strong>Code Review Assistant</strong> desktop app by PocketMind
+          (Windows / Microsoft Store).
+        </p>
+
+        <h3>Summary</h3>
+        <p>
+          Code Review Assistant does <strong>not</strong> operate PocketMind cloud accounts for your code.
+          Your API keys and file contents stay on your device unless you choose to send them to a
+          third-party AI provider you configure.
+        </p>
+
+        <h3>Data we store on your device</h3>
+        <ul>
+          <li>API keys for providers you configure (OpenAI, Anthropic, DeepSeek, Google Gemini, Mistral, Groq)</li>
+          <li>Optional GitHub token for private repository clones</li>
+          <li>Provider and model preferences</li>
+        </ul>
+        <p>
+          Keys are stored with the operating system keychain when available, otherwise in an encrypted
+          local file under your user profile (<span class="url">~/.code-review-assistant/</span> on supported systems).
+        </p>
+
+        <h3>Data sent over the network</h3>
+        <p>When you run Review, Humanize, or Edit:</p>
+        <ul>
+          <li>Selected file contents and prompts are sent only to the AI provider you configured</li>
+          <li>GitHub clone uses Git over HTTPS to GitHub (and your token if provided)</li>
+        </ul>
+        <p>PocketMind does not receive your source code or API keys.</p>
+
+        <h3>Children</h3>
+        <p>
+          This product is intended for adults and developers. It is not directed at children under 13.
+        </p>
+
+        <h3>Contact</h3>
+        <p>
+          Privacy questions:
+          <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a>
+        </p>
+        <p style="margin-bottom:0">
+          Permanent URL for this policy:
+          <br />
+          <span class="url">https://noumanshakeil.github.io/#privacy-policy</span>
+        </p>
+      </div>
+    </section>
+
     <footer>
-      PocketMind Hybrid AI · Windows x64 · Hosted on GitHub Pages
+      PocketMind ·
+      <a href="#privacy-policy">Privacy policy</a> ·
+      <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a>
+      · Hosted on GitHub Pages
     </footer>
   </main>
+  <script>
+    // Ensure deep-link #privacy-policy scrolls after load (GitHub Pages / browsers)
+    if (location.hash === '#privacy-policy') {
+      const el = document.getElementById('privacy-policy');
+      if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    }
+  </script>
 </body>
 </html>

@@ -1,12 +1,17 @@
-# noumanshakeil.github.io
-
-Public download host for **PocketMind Hybrid AI** Windows installers (Microsoft Store package URL + direct downloads).
+Public download host for **PocketMind** Windows packages, plus the
+**Code Review Assistant** privacy policy.
 
 ## Live site
 
 https://noumanshakeil.github.io/
 
-## Store package URL (x64 NSIS)
+## Privacy policy (Code Review Assistant)
+
+https://noumanshakeil.github.io/#privacy-policy
+
+Use this URL in Microsoft Partner Center for the Store listing privacy policy field.
+
+## Store package URL (Hybrid AI x64 NSIS)
 
 https://noumanshakeil.github.io/downloads/1.0.0/PocketMind-Hybrid-AI_1.0.0_x64-setup.exe
 
