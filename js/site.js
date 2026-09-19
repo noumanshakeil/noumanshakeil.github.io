@@ -28,7 +28,10 @@
       toggle.textContent = open ? "✕" : "☰";
     });
     $$("a", links).forEach(function (a) {
-      a.addEventListener("click", closeNav);
+      a.addEventListener("click", function () {
+        $$("details", links).forEach(function (d) { d.open = false; });
+        closeNav();
+      });
     });
     window.addEventListener("resize", function () {
       if (window.innerWidth > 1100) closeNav();
@@ -45,9 +48,28 @@
     el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   }
 
-  window.addEventListener("hashchange", scrollHashTarget);
+  function openLayerForHash() {
+    var id = location.hash.slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    var details = el.matches("details") ? el : el.closest("details");
+    if (details) details.open = true;
+    if (id === "certificates" || id === "projects" || id === "experience" || id === "pocketmind") {
+      var nested = el.querySelector("details.layer");
+      if (nested && (id === "certificates" || id === "projects")) nested.open = true;
+    }
+  }
+
+  window.addEventListener("hashchange", function () {
+    openLayerForHash();
+    scrollHashTarget();
+  });
   window.addEventListener("load", function () {
-    if (location.hash) requestAnimationFrame(scrollHashTarget);
+    if (location.hash) {
+      openLayerForHash();
+      requestAnimationFrame(scrollHashTarget);
+    }
   });
 
   function bindFilters(groupSel, itemSel, attr) {

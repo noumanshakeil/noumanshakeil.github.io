@@ -2,6 +2,8 @@
 
 Static GitHub Pages site for **Muhammad Nouman Shakeel** (Founder PocketMind · Co-founder CodexBridge · AI Engineer @ Zindex) with a first-class apps catalogue.
 
+Portrait in the hero and about sections is the provided file at `assets/img/portrait-nouman.png`. The visual system is Fraunces + Geist on a Paper / Ink / Signal / Flare palette, with extra biography, academic work, and certificate index behind layer controls. Locked privacy hashes stay in the page, word-for-word.
+
 ## Live
 
 https://noumanshakeil.github.io/

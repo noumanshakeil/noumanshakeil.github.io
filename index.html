@@ -10,67 +10,84 @@
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
-  <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="page">
   <header>
   <nav class="nav" aria-label="Site">
     <a class="nav-logo" href="#home">MN<span>.</span>Shakeel</a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#pocketmind">PocketMind</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#privacy">Privacy</a></li>
-      <li><a href="#achievements">Honours</a></li>
-      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="nav-more">
+        <details>
+          <summary>More</summary>
+          <div class="nav-more-panel">
+            <a href="#experience">Experience</a>
+            <a href="#pocketmind">PocketMind</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Honours</a>
+            <a href="#certificates">Certificates</a>
+          </div>
+        </details>
+      </li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-    <a class="nav-cta" href="https://wa.me/923405055603?text=Hi%20Nouman%2C%20I%20want%20to%20discuss%20an%20AI%20project." target="_blank" rel="noopener">Contact Me</a>
+    <a class="nav-cta" href="https://wa.me/923405055603?text=Hi%20Nouman%2C%20I%20want%20to%20discuss%20an%20AI%20project." target="_blank" rel="noopener">Contact</a>
   </nav>
   </header>
 
   <main>
   <section class="hero" id="home">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-stage">
-      <p class="hero-tag">Founder PocketMind · Co-founder CodexBridge · AI Engineer @ Zindex</p>
-      <h1 class="hero-name">
-        <span class="line">Muhammad</span>
-        <span class="line serif">Nouman</span>
-        <span class="line">Shakeel</span>
-      </h1>
-      <p class="hero-title">Private AI products. Production systems. Real-world impact.</p>
-      <p class="hero-desc">I build AI that people can actually ship and trust — from <strong>PocketMind Hybrid AI</strong> (offline-first desktop &amp; mobile AI for Mac, Windows, Linux, and Android) to CodexBridge and production systems at Zindex. BS AI @ NUST, Islamabad. Topped <strong>ETEA ’25 CS</strong> (1st in KPK Computer Science).</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#work">Explore the catalogue</a>
-        <a class="btn btn-ghost" href="#contact">Contact Me</a>
-      </div>
-      <div class="hero-stats">
-        <div><span class="stat-num">4</span><span class="stat-label">OS Platforms</span></div>
-        <div><span class="stat-num">24+</span><span class="stat-label">AI Projects</span></div>
-        <div><span class="stat-num">34</span><span class="stat-label">Trophies · Gold Medalist</span></div>
-        <div><span class="stat-num">NUST</span><span class="stat-label">BS AI · Islamabad</span></div>
-      </div>
-      <div class="hero-orb" aria-hidden="true">
-        <div>
-          <strong>1st</strong>
-          <span>ETEA ’25 CS<br>KPK Topper</span>
+      <div class="hero-copy">
+        <p class="hero-tag">Founder PocketMind · Co-founder CodexBridge · AI Engineer @ Zindex</p>
+        <h1 class="hero-name">
+          <span class="line">Muhammad</span>
+          <span class="line serif">Nouman</span>
+          <span class="line">Shakeel</span>
+        </h1>
+        <p class="hero-title">Private AI products. Production systems.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">View the catalogue</a>
         </div>
+        <div class="hero-stats">
+          <div><span class="stat-num">4</span><span class="stat-label">Apps in stuff</span></div>
+          <div><span class="stat-num">1st</span><span class="stat-label">ETEA ’25 CS · KPK</span></div>
+          <div><span class="stat-num">NUST</span><span class="stat-label">BS AI · Islamabad</span></div>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <div class="hero-portrait-plate">
+          <img src="assets/img/portrait-nouman.png" alt="Muhammad Nouman Shakeel" width="800" height="800">
+        </div>
+        <span class="hero-chip hero-chip-a">1st · ETEA ’25 CS</span>
+        <span class="hero-chip hero-chip-b">BS AI · NUST</span>
+        <span class="hero-chip hero-chip-c">PocketMind</span>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="about">
+  <section class="section" id="about">
     <div class="section-inner" data-reveal>
-      <p class="section-tag">About Me</p>
-      <h2 class="section-title">The mind behind<br><em>PocketMind</em></h2>
+      <p class="section-tag">About</p>
+      <h2 class="section-title">The mind behind <em>PocketMind</em></h2>
       <div class="about-grid">
+        <figure class="about-portrait">
+          <img src="assets/img/portrait-nouman.png" alt="Muhammad Nouman Shakeel, founder of PocketMind" width="800" height="800">
+        </figure>
         <div class="about-text">
           <p>I'm <strong>Muhammad Nouman Shakeel</strong> — Founder of <strong>PocketMind</strong>, Co-founder of <strong>CodexBridge</strong>, AI Engineer at <strong>Zindex</strong>, and a BS Artificial Intelligence student at <strong>NUST, Islamabad</strong>.</p>
+          <p>I build AI systems that solve real problems — production-ready products people can actually use. <strong>PocketMind Hybrid AI</strong> is the flagship: private offline AI by default, online power when you need it.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">See the work</a>
+          </div>
+          <details class="layer" id="about-bio">
+            <summary>Read the full bio</summary>
           <p>I build AI systems that solve real problems — not concepts, not notebooks, but production-ready products people can actually use. <strong>PocketMind Hybrid AI</strong> is my flagship: private offline AI by default, online power when you need it — for Mac, Windows, Linux, and Android.</p>
           <p>At <strong>CodexBridge</strong>, I'm closing the gap between what a product does and what teams actually understand as they ship faster. At <strong>Zindex</strong>, I build production-style AI systems in parallel with founding work.</p>
           <p>Beyond products, I topped <strong>ETEA ’25 CS</strong> (1st in KPK Computer Science), topped Pakistan <strong>twice in English Language Proficiency Olympiads</strong>, represented the country internationally in Turkey, and was named <strong>Student of the Year</strong> at The Peace College.</p>
-        </div>
         <div>
           <div class="skill-group">
             <p class="skill-group-title">Products &amp; Focus</p>
@@ -108,11 +125,13 @@
             </div>
           </div>
         </div>
+          </details>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="experience">
+  <section class="section section-alt" id="experience">
     <div class="section-inner" data-reveal>
       <p class="section-tag">Career</p>
       <h2 class="section-title">Where I've <em>built</em></h2>
@@ -149,6 +168,8 @@
           </ul>
         </div>
       </div>
+      <details class="layer" id="experience-more">
+        <summary>Earlier roles and degree</summary>
       <div class="exp-item">
         <div class="exp-date">Mar 2026 — Jun 2026</div>
         <div class="exp-content">
@@ -190,61 +211,106 @@
           </ul>
         </div>
       </div>
+      </details>
     </div>
   </section>
 
-  <section class="section section-alt" id="work">
+  <section class="section" id="work">
     <div class="section-inner" data-reveal>
-      <p class="section-tag" id="catalogue">Work / Catalogue</p>
+      <p class="section-tag" id="catalogue">Work</p>
       <h2 class="section-title">Apps <em>catalogue</em></h2>
-      <p class="hero-desc">Four apps from the private <code>noumanshakeil/stuff</code> catalogue. Hybrid AI is one desktop product here; the Android listing is the Offline AI Labs package — not four companion apps.</p>
+      <p class="hero-desc">Four apps from the private <code>noumanshakeil/stuff</code> catalogue. Hybrid AI is one desktop product; Offline AI Labs is the Android workspace — not four companion apps.</p>
       <div class="catalogue-grid">
         <article class="card app-card">
-  <img src="assets/catalogue/hybrid-ai.jpg" alt="PocketMind Hybrid AI private chat" width="960" height="640" loading="lazy">
+  <div class="app-visual">
+    <img class="app-hero-shot" src="assets/catalogue/hybrid-ai.jpg" alt="PocketMind Hybrid AI private chat" width="960" height="640" loading="lazy">
+    <div class="app-film">
+      <img src="assets/catalogue/hybrid/image-studio.jpg" alt="PocketMind Image Studio" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/hybrid/pocketcode.jpg" alt="PocketCode agent workspace" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/hybrid/models.jpg" alt="Hybrid models and runtimes" width="640" height="360" loading="lazy">
+    </div>
+  </div>
   <div class="card-body">
   <p class="card-kicker">PocketMind AI · Desktop</p>
   <h3>PocketMind Hybrid AI</h3>
-  <p>Offline-first hybrid desktop AI workspace for Windows (primary ship target), macOS, and Linux. Built with Tauri 1, Rust, and React. Run local GGUF chat, index any folder for grounded Knowledge Chat (RAG), use PocketCode (agent + MCP), run Fortinet SOC Copilot workflows, manage llama.cpp runtimes (CPU / CUDA / Vulkan / Metal), and optionally connect online providers or an enterprise OpenAI-compatible server.</p>
+  <p>Offline-first hybrid desktop AI for Windows (primary ship target), macOS, and Linux. Tauri 1, Rust, and React.</p>
   <div class="card-meta">
     <span class="pill">v1.0.0 · Windows · macOS · Linux</span>
     <span><a class="card-link" href="#pocketmind">Open product →</a></span>
   </div>
+  <details class="layer" id="spec-hybrid">
+    <summary>Open spec</summary>
+    <p>Run local GGUF chat, index any folder for grounded Knowledge Chat (RAG), use PocketCode (agent + MCP), run Fortinet SOC Copilot workflows, manage llama.cpp runtimes (CPU / CUDA / Vulkan / Metal), and optionally connect online providers or an enterprise OpenAI-compatible server.</p>
+  </details>
   </div>
 </article>
 <article class="card app-card">
-  <img src="assets/catalogue/receptionist-studio.jpg" alt="PocketMind: AI Receptionist Studio board" width="960" height="540" loading="lazy">
+  <div class="app-visual">
+    <img class="app-hero-shot" src="assets/catalogue/receptionist-studio.jpg" alt="PocketMind: AI Receptionist Studio board" width="960" height="540" loading="lazy">
+    <div class="app-film">
+      <img src="assets/catalogue/receptionist/test-console.jpg" alt="Receptionist Studio test console" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/receptionist/bookings.jpg" alt="Receptionist Studio bookings" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/receptionist/widget.jpg" alt="Receptionist Studio website widget" width="640" height="360" loading="lazy">
+    </div>
+  </div>
   <div class="card-body">
   <p class="card-kicker">PocketMind · Windows studio</p>
   <h3>PocketMind: AI Receptionist Studio</h3>
-  <p>Agency studio for designing, testing, and deploying custom AI receptionists for client businesses. The Windows app is a thin Electron shell around the same dashboard the API serves. Phone (Retell) is a channel on an existing agent, not a second product. This software uses AI.</p>
+  <p>Agency studio for designing, testing, and deploying custom AI receptionists for client businesses. This software uses AI.</p>
   <div class="card-meta">
     <span class="pill">Publisher: PocketMind</span>
-    <span><a class="card-link" href="https://github.com/noumanshakeil/ai-receptionist-platform" target="_blank" rel="noopener">GitHub →</a><a class="card-link" href="#privacy-policy">Privacy policy →</a></span>
+    <span><a class="card-link" href="https://github.com/noumanshakeil/ai-receptionist-platform" target="_blank" rel="noopener">GitHub →</a> <a class="card-link" href="#privacy-policy">Privacy policy →</a></span>
   </div>
+  <details class="layer" id="spec-studio">
+    <summary>Open spec</summary>
+    <p>The Windows app is a thin Electron shell around the same dashboard the API serves. Phone (Retell) is a channel on an existing agent, not a second product. Multi-client workspaces, business profiles, guided agent builder, in-app test console, embeddable widget, appointment book, and human escalation.</p>
+  </details>
   </div>
 </article>
 <article class="card app-card">
-  <img src="assets/catalogue/reviewer-humanizer.jpg" alt="PocketMind AI Reviewer And Humanizer review screen" width="960" height="540" loading="lazy">
+  <div class="app-visual">
+    <img class="app-hero-shot" src="assets/catalogue/reviewer-humanizer.jpg" alt="PocketMind AI Reviewer And Humanizer review screen" width="960" height="540" loading="lazy">
+    <div class="app-film">
+      <img src="assets/catalogue/reviewer/humanize.jpg" alt="Reviewer And Humanizer humanize mode" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/reviewer/models-keys.jpg" alt="Models and API keys dialog" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/reviewer-humanizer.jpg" alt="Reviewer And Humanizer review screen" width="640" height="360" loading="lazy">
+    </div>
+  </div>
   <div class="card-body">
   <p class="card-kicker">PocketMind · Desktop</p>
   <h3>PocketMind AI: Reviewer And Humanizer</h3>
-  <p>Desktop app for ingesting text and code, selecting up to five files, and running independent AI review or humanize jobs on each. Built with Electron + React + TypeScript + Vite. Packages to Windows NSIS .exe, portable .exe, and MSIX/AppX. Secrets use the OS keychain with an AES-GCM encrypted file fallback.</p>
+  <p>Ingest text and code, select up to five files, and run independent AI review or humanize jobs on each.</p>
   <div class="card-meta">
     <span class="pill">Windows</span>
-    <span><a class="card-link" href="https://github.com/noumanshakeil/code-review-assistant" target="_blank" rel="noopener">GitHub →</a><a class="card-link" href="#privacy-reviewer-and-humanizer">Privacy policy →</a></span>
+    <span><a class="card-link" href="https://github.com/noumanshakeil/code-review-assistant" target="_blank" rel="noopener">GitHub →</a> <a class="card-link" href="#privacy-reviewer-and-humanizer">Privacy policy →</a></span>
   </div>
+  <details class="layer" id="spec-reviewer">
+    <summary>Open spec</summary>
+    <p>Built with Electron + React + TypeScript + Vite. Packages to Windows NSIS .exe, portable .exe, and MSIX/AppX. Secrets use the OS keychain with an AES-GCM encrypted file fallback. Paste snippets, open a folder, or clone a GitHub repo. File changes always require confirmation.</p>
+  </details>
   </div>
 </article>
 <article class="card app-card">
-  <img src="assets/catalogue/offline-ai-labs.jpg" alt="PocketMind Offline AI Labs" width="640" height="960" loading="lazy">
+  <div class="app-visual">
+    <img class="app-hero-shot" src="assets/catalogue/offline-ai-labs.jpg" alt="PocketMind Offline AI Labs" width="640" height="960" loading="lazy">
+    <div class="app-film">
+      <img src="assets/catalogue/labs/04.jpg" alt="Offline AI Labs screen" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/labs/07.jpg" alt="Offline AI Labs workspace" width="640" height="360" loading="lazy">
+      <img src="assets/catalogue/labs/feature.jpg" alt="Offline AI Labs feature graphic" width="1024" height="500" loading="lazy">
+    </div>
+  </div>
   <div class="card-body">
   <p class="card-kicker">PocketMind Offline AI Labs · Android</p>
   <h3>PocketMind Offline AI Labs</h3>
-  <p>One Android workspace (Play listing name in stuff: PocketMind Hybrid AI; application id <code>com.pocketmind.hybridai</code>). Offline chat, online chat, photo and document understanding, Image Studio, voice generation and cloning, plus characters, prompts, backups, storage, and organization-server mode — not separate store apps. Store-style summary: PocketMind brings offline AI, online vision models, document analysis, custom characters, prompt templates, backups, storage management, image generation, and voice generation &amp; cloning into one polished mobile workspace.</p>
+  <p>One Android workspace. Play listing name in stuff: PocketMind Hybrid AI (<code>com.pocketmind.hybridai</code>).</p>
   <div class="card-meta">
     <span class="pill">Android 28+ · arm64-v8a</span>
     <span class="pill">Public repo: not listed in stuff</span>
   </div>
+  <details class="layer" id="spec-labs">
+    <summary>Open spec</summary>
+    <p>Offline chat, online chat, photo and document understanding, Image Studio, voice generation and cloning, plus characters, prompts, backups, storage, and organization-server mode — not separate store apps. Store-style summary: PocketMind brings offline AI, online vision models, document analysis, custom characters, prompt templates, backups, storage management, image generation, and voice generation &amp; cloning into one polished mobile workspace.</p>
+  </details>
   </div>
 </article>
       </div>
@@ -259,14 +325,10 @@
         <div class="pm-panel">
           <div class="pm-kicker">Private Offline AI · Online When Needed</div>
           <h3 class="pm-title">Your AI. Your choice.<br><em>Run locally. Connect globally.</em></h3>
-          <p class="pm-desc">Private <strong>Offline</strong> AI. <strong>Online</strong> power when you need it.</p>
-          <p class="pm-desc">Your data stays yours. Offline by default. Online when it matters.</p>
-          <p class="pm-desc">Chat, files, images, voice, custom AI, and Knowledge Chat — one app for Mac, Windows, and Linux, with Android support for portable private AI.</p>
-          <p class="pm-desc">PocketMind Hybrid AI is a desktop-first AI workspace (Mac · Windows · Linux) with a polished Android companion. Run models locally with llama.cpp, attach documents, index folders with Knowledge Chat (RAG), analyze images, talk with voice, use GPU acceleration (Metal / CUDA / Vulkan), and connect online models only when you choose. Built for founders, analysts, and teams who need real capability without giving up control of their data.</p>
+          <p class="pm-desc">Private offline AI. Online power when you need it — for Mac, Windows, and Linux, with an Android companion.</p>
           <p class="pm-kicker">Available for macOS · Windows · Linux · Android</p>
           <div class="pm-actions">
-            <a class="btn btn-primary" href="#privacy">View Privacy Details</a>
-            <a class="btn btn-ghost" href="#contact">Discuss the App</a>
+            <a class="btn btn-primary" href="#privacy">View privacy details</a>
           </div>
         </div>
         <div class="pm-panel">
@@ -286,6 +348,9 @@
       <div class="pm-pills">
         <span>Offline AI</span><span>Online Models</span><span>GPU Support</span><span>Files &amp; Docs</span><span>Knowledge Chat / RAG</span><span>Images</span><span>Voice</span><span>Privacy Focused</span><span>Mac · Windows · Linux</span>
       </div>
+      <details class="layer" id="pocketmind-spec">
+        <summary>Open the full spec</summary>
+      <p class="pm-desc">PocketMind Hybrid AI is a desktop-first AI workspace (Mac · Windows · Linux) with a polished Android companion. Run models locally with llama.cpp, attach documents, index folders with Knowledge Chat (RAG), analyze images, talk with voice, use GPU acceleration (Metal / CUDA / Vulkan), and connect online models only when you choose.</p>
       <div class="pm-feature-grid">
         <div class="pm-feature"><h3>Offline / Local AI</h3><p>Run models on your machine with llama.cpp. Prompts stay local when you choose offline mode — built for compliance, IP protection, and sensitive work.</p></div>
 <div class="pm-feature"><h3>Online Models</h3><p>Connect Gemini, Groq, Hugging Face, Together AI, and more when you need cloud speed or vision — only when you opt in.</p></div>
@@ -304,6 +369,7 @@
         <h3>Desktop workspace + Android companion</h3>
         <p class="pm-desc" style="margin-bottom:0">The desktop app is the full PocketMind Hybrid AI workspace for Mac, Windows, and Linux — sidebar navigation for Chat History, Knowledge Chat, Models, Files, Image Studio, and Voice, with action tiles for day-to-day work including Fortinet SOC Copilot. Android brings the same hybrid privacy model to a portable form factor. One product family: private local intelligence, online power on demand.</p>
       </div>
+      </details>
     </div>
   </section>
 
@@ -392,6 +458,10 @@
     </div>
   </div>
 </article>
+      </div>
+      <details class="layer" id="projects-all">
+        <summary>Open the remaining 18 academic projects</summary>
+      <div class="projects-grid">
 <article class="card project-card" data-tags="cv">
   <img src="assets/screenshots/project-7.jpg" alt="Cartoonify Image" width="640" height="360" loading="lazy">
   <div class="card-body">
@@ -609,6 +679,7 @@
   </div>
 </article>
       </div>
+      </details>
     </div>
   </section>
 
@@ -974,6 +1045,8 @@
       <p class="section-tag">Credentials</p>
       <h2 class="section-title">Certificates &amp; <em>Credentials</em></h2>
       <p class="cert-count">39 Certificates &amp; Credentials</p>
+      <details class="layer" id="certificates-all">
+        <summary>Open the certificate index</summary>
       <div class="filters" id="cert-filters" role="group" aria-label="Filter certificates">
         <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
         <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
@@ -1556,10 +1629,11 @@
   </div>
 </article>
       </div>
+      </details>
     </div>
   </section>
 
-  <section class="section section-alt" id="contact">
+  <section class="section" id="contact">
     <div class="section-inner" data-reveal>
       <p class="section-tag">Get In Touch</p>
       <h2 class="section-title">Let's build something <em>great</em></h2>
