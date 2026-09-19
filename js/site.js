@@ -70,7 +70,6 @@
     });
   }
 
-  bindFilters("#catalogue-filters", ".app-card", "data-kinds");
   bindFilters("#project-filters", ".project-card", "data-tags");
   bindFilters("#cert-filters", ".cert-card", "data-cat");
 

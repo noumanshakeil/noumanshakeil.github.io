@@ -14,7 +14,7 @@ https://noumanshakeil.github.io/
 
 Android Hybrid AI policy (moved so it does not overwrite the Studio store hash): https://noumanshakeil.github.io/#privacy-hybrid-ai
 
-Suite app policies: `privacy-localchat.html`, `privacy-imagelab.html`, `privacy-voicelab.html`, `privacy-characters.html`.
+Apps catalogue (four apps): PocketMind Hybrid AI, PocketMind: AI Receptionist Studio, PocketMind AI: Reviewer And Humanizer, Harborline Receptionist.
 
 ## Hosting notes
 
