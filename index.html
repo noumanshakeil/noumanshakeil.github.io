@@ -1,311 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PocketMind — Downloads &amp; Privacy</title>
-  <meta name="description" content="PocketMind product downloads and privacy policies, including PocketMind: AI Receptionist Studio." />
-  <style>
-    :root {
-      --bg0: #070a0c;
-      --bg1: #0e1512;
-      --line: #1f2a24;
-      --text: #e8f0ea;
-      --muted: #8fa398;
-      --accent: #22c55e;
-      --accent-dim: #16a34a;
-      --card: #0c1210;
-      --teal: #2bb0a6;
-      --paper: #f3efe6;
-      --ink: #1c1915;
-      --ink-soft: #5c564c;
-      --clay: #9a4318;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1000px 500px at 10% -10%, #14301f 0%, transparent 55%),
-        radial-gradient(800px 400px at 100% 0%, #102018 0%, transparent 50%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-    }
-    main {
-      width: min(760px, calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 4rem 0 5rem;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.25rem;
-      margin-bottom: 2rem;
-      font-size: 0.88rem;
-    }
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-    nav a:hover { color: var(--accent); }
-    .brand {
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-      margin: 0 0 0.75rem;
-    }
-    h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      line-height: 1.15;
-      margin: 0 0 0.75rem;
-      font-weight: 800;
-    }
-    h2 {
-      font-size: 1.15rem;
-      margin: 0 0 0.75rem;
-    }
-    h3 {
-      font-size: 1rem;
-      margin: 1.35rem 0 0.45rem;
-    }
-    .lead {
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.55;
-      margin: 0 0 2rem;
-      max-width: 40rem;
-    }
-    .card {
-      background: color-mix(in srgb, var(--card) 92%, black);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 1.25rem 1.35rem;
-      margin-bottom: 1rem;
-    }
-    .card > h2 {
-      margin: 0 0 0.35rem;
-      font-size: 1.05rem;
-    }
-    .card > p {
-      margin: 0 0 1rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.45;
-    }
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .pill {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.2rem 0.65rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }
-    a.btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      border-radius: 10px;
-      padding: 0.7rem 1rem;
-      font-weight: 700;
-      font-size: 0.92rem;
-      border: 1px solid transparent;
-    }
-    a.btn-primary {
-      background: var(--accent);
-      color: #04140a;
-    }
-    a.btn-primary:hover { background: var(--accent-dim); color: #fff; }
-    a.btn-ghost {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--line);
-    }
-    a.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-    code, .url {
-      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-      font-size: 0.78rem;
-      word-break: break-all;
-      color: #b7e4c4;
-    }
-    .note {
-      margin-top: 1.5rem;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.5;
-    }
-    #privacy-policy,
-    #privacy-reviewer-and-humanizer {
-      scroll-margin-top: 1.5rem;
-      margin-top: 3rem;
-      padding-top: 0.5rem;
-    }
-    #privacy-reviewer-and-humanizer .policy-body {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    #privacy-reviewer-and-humanizer .policy-body ul {
-      margin: 0.4rem 0 0.8rem 1.1rem;
-      padding: 0;
-    }
-    #privacy-reviewer-and-humanizer .policy-body li { margin: 0.3rem 0; }
-    #privacy-reviewer-and-humanizer .policy-body strong { color: var(--text); }
-    #privacy-reviewer-and-humanizer .policy-meta,
-    #privacy-policy .policy-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.75rem 0 1.25rem;
-    }
-    #privacy-reviewer-and-humanizer a { color: var(--teal); }
-
-    /* Studio policy matches store-listing/privacy.html + in-app #/privacy */
-    #privacy-policy.studio-policy {
-      background: var(--paper);
-      color: var(--ink);
-      border-color: #e0d8c8;
-      padding: 1.75rem 1.6rem 1.85rem;
-    }
-    #privacy-policy .studio-head {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.85rem;
-    }
-    #privacy-policy .studio-head img {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: #fffdf8;
-      border: 1px solid #e8e0d2;
-    }
-    #privacy-policy .studio-kicker {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--clay);
-      font-weight: 700;
-      margin: 0;
-    }
-    #privacy-policy h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-      font-size: 1.7rem;
-      color: var(--ink);
-      margin: 0;
-    }
-    #privacy-policy .policy-meta .pill {
-      border-color: #d9d0c0;
-      color: var(--ink-soft);
-      background: #fffdf8;
-    }
-    #privacy-policy .policy-body {
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    #privacy-policy .policy-body p { margin: 0 0 0.9rem; }
-    #privacy-policy .policy-body h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-      font-size: 1.15rem;
-      color: var(--ink);
-      margin: 1.35rem 0 0.45rem;
-    }
-    #privacy-policy .policy-body ul {
-      margin: 0.35rem 0 0.9rem 1.15rem;
-      padding: 0;
-    }
-    #privacy-policy .policy-body li { margin: 0.35rem 0; }
-    #privacy-policy .policy-body code,
-    #privacy-policy .policy-body .url {
-      color: var(--clay);
-      font-size: 0.82rem;
-    }
-    #privacy-policy a { color: var(--clay); }
-
-    footer {
-      margin-top: 2.5rem;
-      color: #6d8074;
-      font-size: 0.8rem;
-    }
-    footer a { color: var(--muted); }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammad Nouman Shakeel — Founder PocketMind · AI Engineer</title>
+  <meta name="description" content="Muhammad Nouman Shakeel — Founder PocketMind, Co-founder CodexBridge, AI Engineer at Zindex. Private AI products, production systems, and an apps catalogue.">
+  <link rel="icon" href="brand/pocketmind-logo-mark.png">
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
+  <a class="skip-link" href="#home">Skip to content</a>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="page">
+  <header>
+  <nav class="nav" aria-label="Site">
+    <a class="nav-logo" href="#home">MN<span>.</span>Shakeel</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#pocketmind">PocketMind</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#achievements">Honours</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <a class="nav-cta" href="https://wa.me/923405055603?text=Hi%20Nouman%2C%20I%20want%20to%20discuss%20an%20AI%20project." target="_blank" rel="noopener">Contact Me</a>
+  </nav>
+  </header>
+
   <main>
-    <nav aria-label="Site">
-      <a href="#downloads">Downloads</a>
-      <a href="#privacy-policy">Privacy policy</a>
-      <a href="#privacy-reviewer-and-humanizer">Reviewer &amp; Humanizer</a>
-    </nav>
-
-    <p class="brand">PocketMind</p>
-    <h1 id="downloads">Windows downloads</h1>
-    <p class="lead">
-      Official host for PocketMind Windows packages. Use the NSIS setup link as the
-      Microsoft Store package URL for Hybrid AI.
-    </p>
-
-    <section class="card">
-      <h2>PocketMind Hybrid AI — NSIS Setup (Store package)</h2>
-      <p>Silent install switch: <span class="url">/S</span>. Architecture: x64. Version 1.0.0.</p>
-      <div class="meta">
-        <span class="pill">EXE installer</span>
-        <span class="pill">x64</span>
-        <span class="pill">v1.0.0</span>
+  <section class="hero" id="home">
+    <div class="hero-stage">
+      <p class="hero-tag">Founder PocketMind · Co-founder CodexBridge · AI Engineer @ Zindex</p>
+      <h1 class="hero-name">
+        <span class="line">Muhammad</span>
+        <span class="line serif">Nouman</span>
+        <span class="line">Shakeel</span>
+      </h1>
+      <p class="hero-title">Private AI products. Production systems. Real-world impact.</p>
+      <p class="hero-desc">I build AI that people can actually ship and trust — from <strong>PocketMind Hybrid AI</strong> (offline-first desktop &amp; mobile AI for Mac, Windows, Linux, and Android) to CodexBridge and production systems at Zindex. BS AI @ NUST, Islamabad. Topped <strong>ETEA ’25 CS</strong> (1st in KPK Computer Science).</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">Explore the catalogue</a>
+        <a class="btn btn-ghost" href="#contact">Contact Me</a>
       </div>
-      <div class="actions">
-        <a class="btn btn-primary" href="downloads/1.0.0/PocketMind-Hybrid-AI_1.0.0_x64-setup.exe">Download setup.exe</a>
+      <div class="hero-stats">
+        <div><span class="stat-num">4</span><span class="stat-label">OS Platforms</span></div>
+        <div><span class="stat-num">24+</span><span class="stat-label">AI Projects</span></div>
+        <div><span class="stat-num">34</span><span class="stat-label">Trophies · Gold Medalist</span></div>
+        <div><span class="stat-num">NUST</span><span class="stat-label">BS AI · Islamabad</span></div>
       </div>
-      <p style="margin-top:1rem;margin-bottom:0">
-        Direct URL:<br />
-        <span class="url">https://noumanshakeil.github.io/downloads/1.0.0/PocketMind-Hybrid-AI_1.0.0_x64-setup.exe</span>
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Windows Installer (MSI)</h2>
-      <p>Alternative package for IT / enterprise imaging. Silent: <span class="url">/quiet</span></p>
-      <div class="actions">
-        <a class="btn btn-ghost" href="downloads/1.0.0/PocketMind-Hybrid-AI_1.0.0_x64_en-US.msi">Download MSI</a>
+      <div class="hero-orb" aria-hidden="true">
+        <div>
+          <strong>1st</strong>
+          <span>ETEA ’25 CS<br>KPK Topper</span>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card">
-      <h2>Portable app EXE</h2>
-      <p>
-        Standalone <span class="url">PocketMind Hybrid AI.exe</span>. For local GGUF chat you still need
-        <span class="url">bin\llama.cpp</span> next to the EXE (shipped in the full payload zip, not on this page).
-      </p>
-      <div class="actions">
-        <a class="btn btn-ghost" href="downloads/1.0.0/PocketMind-Hybrid-AI.exe">Download portable EXE</a>
+  <section class="section section-alt" id="about">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag">About Me</p>
+      <h2 class="section-title">The mind behind<br><em>PocketMind</em></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm <strong>Muhammad Nouman Shakeel</strong> — Founder of <strong>PocketMind</strong>, Co-founder of <strong>CodexBridge</strong>, AI Engineer at <strong>Zindex</strong>, and a BS Artificial Intelligence student at <strong>NUST, Islamabad</strong>.</p>
+          <p>I build AI systems that solve real problems — not concepts, not notebooks, but production-ready products people can actually use. <strong>PocketMind Hybrid AI</strong> is my flagship: private offline AI by default, online power when you need it — for Mac, Windows, Linux, and Android.</p>
+          <p>At <strong>CodexBridge</strong>, I'm closing the gap between what a product does and what teams actually understand as they ship faster. At <strong>Zindex</strong>, I build production-style AI systems in parallel with founding work.</p>
+          <p>Beyond products, I topped <strong>ETEA ’25 CS</strong> (1st in KPK Computer Science), topped Pakistan <strong>twice in English Language Proficiency Olympiads</strong>, represented the country internationally in Turkey, and was named <strong>Student of the Year</strong> at The Peace College.</p>
+        </div>
+        <div>
+          <div class="skill-group">
+            <p class="skill-group-title">Products &amp; Focus</p>
+            <div class="skill-tags">
+              <span class="skill-tag hl">PocketMind Hybrid AI</span>
+              <span class="skill-tag hl">Offline / Local LLMs</span>
+              <span class="skill-tag hl">Knowledge Chat / RAG</span>
+              <span class="skill-tag">Desktop AI (Mac · Win · Linux)</span>
+              <span class="skill-tag">Privacy-First AI</span>
+              <span class="skill-tag">CodexBridge</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-title">Core AI / ML</p>
+            <div class="skill-tags">
+              <span class="skill-tag hl">Deep Learning</span>
+              <span class="skill-tag hl">Computer Vision</span>
+              <span class="skill-tag hl">NLP / LLMs</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">OpenCV</span>
+              <span class="skill-tag">llama.cpp</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-title">Engineering</p>
+            <div class="skill-tags">
+              <span class="skill-tag hl">Python</span>
+              <span class="skill-tag">Rust / Tauri</span>
+              <span class="skill-tag">Android / Kotlin</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Git / GitHub</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <p class="note">
-      After installing Hybrid AI, add your GGUF models under the app data / models folder shown in Settings.
-      Local inference also needs llama.cpp runtimes (CPU/CUDA/Vulkan) from the desktop payload package.
-    </p>
+  <section class="section" id="experience">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag">Career</p>
+      <h2 class="section-title">Where I've <em>built</em></h2>
+      <div class="exp-item">
+        <div class="exp-date">Jun 2026 — Present</div>
+        <div class="exp-content">
+          <div class="exp-role">Artificial Intelligence Engineer</div>
+          <div class="exp-company">Zindex · Full-time</div>
+          <ul class="exp-bullets">
+            <li>Building production AI systems alongside founding work — practical models and workflows teams can deploy.</li>
+            <li>Focus on real-world AI engineering: reliable pipelines, useful interfaces, and measurable outcomes.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Jun 2026 — Present</div>
+        <div class="exp-content">
+          <div class="exp-role">Co-Founder</div>
+          <div class="exp-company">CodexBridge</div>
+          <ul class="exp-bullets">
+            <li>Building CodexBridge to close the gap between what a product does and what people around it actually understand.</li>
+            <li>Owning early product thinking and engineering as teams ship faster and documentation falls behind.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Sep 2025 — Present</div>
+        <div class="exp-content">
+          <div class="exp-role">Founder</div>
+          <div class="exp-company">PocketMind</div>
+          <ul class="exp-bullets">
+            <li>Founded PocketMind Hybrid AI — private offline AI by default, online power when needed, for Mac, Windows, Linux, and Android.</li>
+            <li>Shipped end-to-end product ownership: local LLMs, Knowledge Chat (RAG), files, images, voice, GPU runtimes, privacy controls, and enterprise-ready deployment features.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Mar 2026 — Jun 2026</div>
+        <div class="exp-content">
+          <div class="exp-role">Machine Learning Engineer · Internship</div>
+          <div class="exp-company">CodeAlpha</div>
+          <ul class="exp-bullets">
+            <li>Built ML models across NLP, computer vision, and audio — full lifecycle from data prep to evaluation.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Mar 2026 — Apr 2026</div>
+        <div class="exp-content">
+          <div class="exp-role">Artificial Intelligence Intern</div>
+          <div class="exp-company">CodeAlpha</div>
+          <ul class="exp-bullets">
+            <li>Completed CodeAlpha’s AI internship focused on chatbot development, generative AI applications, and applied machine learning projects.</li>
+            <li>Delivered production-style AI deliverables recognised with completion certificate and letter of recommendation (CA/DF1/32621).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Feb 2026 — Apr 2026</div>
+        <div class="exp-content">
+          <div class="exp-role">Machine Learning Engineer · Internship</div>
+          <div class="exp-company">Arch Technologies</div>
+          <ul class="exp-bullets">
+            <li>Data preprocessing, feature engineering, and supervised ML models for practical applications.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">2025 — 2029</div>
+        <div class="exp-content">
+          <div class="exp-role">BS Artificial Intelligence</div>
+          <div class="exp-company">NUST Islamabad</div>
+          <ul class="exp-bullets">
+            <li>Coursework in machine learning, deep learning, computer vision, NLP, data structures, and software engineering.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="privacy-policy" class="card studio-policy" aria-labelledby="privacy-heading">
+  <section class="section section-alt" id="work">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag" id="catalogue">Work / Catalogue</p>
+      <h2 class="section-title">Apps <em>catalogue</em></h2>
+      <p class="hero-desc">Shipped PocketMind products and other public apps, sourced from existing project pages and GitHub facts. The <code>noumanshakeil/stuff</code> catalogue repo was not available (404).</p>
+      <div class="filters" id="catalogue-filters" role="group" aria-label="Filter catalogue">
+        <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" type="button" data-filter="product" aria-pressed="false">Products</button>
+        <button class="filter-btn" type="button" data-filter="pocketmind" aria-pressed="false">PocketMind</button>
+        <button class="filter-btn" type="button" data-filter="android" aria-pressed="false">Android suite</button>
+        <button class="filter-btn" type="button" data-filter="academic" aria-pressed="false">Academic products</button>
+      </div>
+      <div class="catalogue-grid">
+        <article class="card app-card" data-kinds="product pocketmind">
+  <p class="card-kicker">PocketMind · Flagship</p>
+  <h3>PocketMind Hybrid AI</h3>
+  <p>Private offline AI by default, online power when you need it — desktop workspace for Mac, Windows, and Linux, with an Android companion. Local LLMs via llama.cpp, Knowledge Chat (RAG), files, images, voice, GPU runtimes (Metal / CUDA / Vulkan), and enterprise-ready deployment features.</p>
+  <div class="card-meta">
+    <span class="pill">Mac · Windows · Linux · Android</span>
+    <span><a class="card-link" href="#pocketmind">Open product →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product pocketmind">
+  <p class="card-kicker">PocketMind · Windows / web studio</p>
+  <h3>PocketMind: AI Receptionist Studio</h3>
+  <p>A Windows desktop and web studio for building, testing, and deploying custom AI receptionists for client businesses. The receptionist can answer questions from the facts you store, take messages, and (when you connect a number) answer the phone through Retell AI. It is an AI system. It is not a human receptionist.</p>
+  <div class="card-meta">
+    <span class="pill">Publisher: PocketMind</span>
+    <span><a class="card-link" href="#privacy-policy">Privacy policy →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product pocketmind">
+  <p class="card-kicker">PocketMind · Desktop</p>
+  <h3>PocketMind AI: Reviewer And Humanizer</h3>
+  <p>Desktop app by PocketMind for ingesting text and code, selecting up to five files, and running independent AI review, humanize, or edit jobs on each. Built with Electron + React + TypeScript + Vite. API keys stay on the device (OS keychain or encrypted local file) unless you send content to a provider you configure.</p>
+  <div class="card-meta">
+    <span class="pill">Windows / Microsoft Store</span>
+    <span><a class="card-link" href="https://github.com/noumanshakeil/code-review-assistant" target="_blank" rel="noopener">GitHub →</a><a class="card-link" href="#privacy-reviewer-and-humanizer">Privacy policy →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product pocketmind android">
+  <p class="card-kicker">PocketMind Suite · Android</p>
+  <h3>PocketMind Local Chat</h3>
+  <p>An offline-only Android chat app that runs local GGUF language models on your device (including optional Vulkan/GPU acceleration where supported). Paid, offline-first. Prompts, chat history, and model inference stay on the phone.</p>
+  <div class="card-meta">
+    <span class="pill">com.pocketmind.localchat</span>
+    <span><a class="card-link" href="privacy-localchat.html">Privacy policy →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product pocketmind android">
+  <p class="card-kicker">PocketMind Suite · Android</p>
+  <h3>PocketMind Image Lab</h3>
+  <p>An offline Android image-generation studio that runs local Stable Diffusion–style models on your device (GPU/Vulkan when available, otherwise CPU). Prompts, model files, and generated images are handled on-device.</p>
+  <div class="card-meta">
+    <span class="pill">com.pocketmind.imagelab</span>
+    <span><a class="card-link" href="privacy-imagelab.html">Privacy policy →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product pocketmind android">
+  <p class="card-kicker">PocketMind Suite · Android</p>
+  <h3>PocketMind Voice Lab</h3>
+  <p>An offline Android voice studio for on-device speech generation and cloning-style workflows using device/local speech paths (including Android system text-to-speech where used). This app does not include online voice providers such as ElevenLabs or OpenAI Audio.</p>
+  <div class="card-meta">
+    <span class="pill">com.pocketmind.voicelab</span>
+    <span><a class="card-link" href="privacy-voicelab.html">Privacy policy →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product pocketmind android">
+  <p class="card-kicker">PocketMind Suite · Android</p>
+  <h3>PocketMind Characters</h3>
+  <p>An offline Android app for creating character personas and chatting with them using local GGUF models that fit available device RAM. Character definitions, chat content, and model inference stay on the phone.</p>
+  <div class="card-meta">
+    <span class="pill">com.pocketmind.characters</span>
+    <span><a class="card-link" href="privacy-characters.html">Privacy policy →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product">
+  <p class="card-kicker">Product · GitHub</p>
+  <h3>Harborline Receptionist</h3>
+  <p>AI voice receptionist for local businesses. The owner pastes a description of the shop; that text is the source of truth for every answer. Harborline picks up inbound questions, books / reschedules / cancels on the built-in calendar, captures leads, routes emergencies to a human, filters spam, handles after-hours, texts confirmations and reminders, and keeps transcripts, contacts, and analytics in one owner desk.</p>
+  <div class="card-meta">
+    <span class="pill">TypeScript</span>
+    <span><a class="card-link" href="https://github.com/noumanshakeil/harborline-receptionist" target="_blank" rel="noopener">GitHub →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="product">
+  <p class="card-kicker">Platform · GitHub</p>
+  <h3>PULSE AI News Intelligence</h3>
+  <p>AI-powered news intelligence platform that summarizes, detects bias, fact-checks, and personalizes news in real time. Built with Node.js, Groq (LLaMA 3.3), and a 7-layer production architecture spanning Kafka, Elasticsearch, Pinecone, and Redis. 8 fully functional modules.</p>
+  <div class="card-meta">
+    <span class="pill">Node.js · Groq</span>
+    <span><a class="card-link" href="https://github.com/noumanshakeil/PULSE-AI-News-Intelligence-Platform" target="_blank" rel="noopener">GitHub →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="academic">
+  <p class="card-kicker">Semester project · ViewTube</p>
+  <h3>ViewTube — YouTube Clone Database System</h3>
+  <p>Full-stack YouTube clone built with Flask + MySQL 8.0 — 14 normalized tables, 6 views, 11 triggers, 5 functions, 12 stored procedures, real video upload/streaming, HTML5 player, likes, comments, subscriptions, watch history, and notifications.</p>
+  <div class="card-meta">
+    <span class="pill">Flask · MySQL 8.0</span>
+    <span><a class="card-link" href="https://github.com/noumanshakeil/DBS-Project" target="_blank" rel="noopener">GitHub →</a></span>
+  </div>
+</article>
+<article class="card app-card" data-kinds="academic">
+  <p class="card-kicker">Capstone</p>
+  <h3>FinSight-AI</h3>
+  <p>Capstone Project.</p>
+  <div class="card-meta">
+    <span class="pill">GitHub</span>
+    <span><a class="card-link" href="https://github.com/noumanshakeil/FinSight-AI" target="_blank" rel="noopener">GitHub →</a></span>
+  </div>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pocketmind">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag">Flagship Product</p>
+      <h2 class="section-title">PocketMind <em>Hybrid AI</em></h2>
+      <div class="pm-hero">
+        <div class="pm-panel">
+          <div class="pm-kicker">Private Offline AI · Online When Needed</div>
+          <h3 class="pm-title">Your AI. Your choice.<br><em>Run locally. Connect globally.</em></h3>
+          <p class="pm-desc">Private <strong>Offline</strong> AI. <strong>Online</strong> power when you need it.</p>
+          <p class="pm-desc">Your data stays yours. Offline by default. Online when it matters.</p>
+          <p class="pm-desc">Chat, files, images, voice, custom AI, and Knowledge Chat — one app for Mac, Windows, and Linux, with Android support for portable private AI.</p>
+          <p class="pm-desc">PocketMind Hybrid AI is a desktop-first AI workspace (Mac · Windows · Linux) with a polished Android companion. Run models locally with llama.cpp, attach documents, index folders with Knowledge Chat (RAG), analyze images, talk with voice, use GPU acceleration (Metal / CUDA / Vulkan), and connect online models only when you choose. Built for founders, analysts, and teams who need real capability without giving up control of their data.</p>
+          <p class="pm-kicker">Available for macOS · Windows · Linux · Android</p>
+          <div class="pm-actions">
+            <a class="btn btn-primary" href="#privacy">View Privacy Details</a>
+            <a class="btn btn-ghost" href="#contact">Discuss the App</a>
+          </div>
+        </div>
+        <div class="pm-panel">
+          <img src="assets/img/pocketmind-logo.png" alt="PocketMind Hybrid AI logo" width="220" height="220" style="width:160px;height:160px;object-fit:cover;border-radius:36px;margin-bottom:16px">
+          <div class="pm-shots">
+            <figure>
+              <img src="assets/img/pocketmind-desktop-banner.png" alt="PocketMind Hybrid AI desktop for Mac, Windows, and Linux" width="800" height="420" loading="lazy">
+              <figcaption>Desktop</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pocketmind-phone-banner.png" alt="PocketMind Hybrid AI on Android" width="800" height="420" loading="lazy">
+              <figcaption>Android</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="pm-pills">
+        <span>Offline AI</span><span>Online Models</span><span>GPU Support</span><span>Files &amp; Docs</span><span>Knowledge Chat / RAG</span><span>Images</span><span>Voice</span><span>Privacy Focused</span><span>Mac · Windows · Linux</span>
+      </div>
+      <div class="pm-feature-grid">
+        <div class="pm-feature"><h3>Offline / Local AI</h3><p>Run models on your machine with llama.cpp. Prompts stay local when you choose offline mode — built for compliance, IP protection, and sensitive work.</p></div>
+<div class="pm-feature"><h3>Online Models</h3><p>Connect Gemini, Groq, Hugging Face, Together AI, and more when you need cloud speed or vision — only when you opt in.</p></div>
+<div class="pm-feature"><h3>Knowledge Chat (RAG)</h3><p>Index a folder and ask grounded questions with sources. Answers from your files — not guesswork from the open internet.</p></div>
+<div class="pm-feature"><h3>Files &amp; Docs</h3><p>Attach PDFs, DOCX, text/code, CSV, JSON, logs, and work through documents in one clean workflow.</p></div>
+<div class="pm-feature"><h3>Image Analysis &amp; Generation</h3><p>Understand screenshots, diagrams, and visuals. Generate images offline or via optional online providers.</p></div>
+<div class="pm-feature"><h3>Voice Chat</h3><p>Talk instead of only typing — voice input, replies, and stop controls for natural hands-free use.</p></div>
+<div class="pm-feature"><h3>Custom AI / Characters</h3><p>Personas and system prompts tuned to your workflow — assistants that match how you actually work.</p></div>
+<div class="pm-feature"><h3>Fortinet SOC Copilot</h3><p>Triage, investigation support, reports, and company-knowledge search built for security teams.</p></div>
+<div class="pm-feature"><h3>Enterprise Server Mode</h3><p>Point clients at your company’s private OpenAI-compatible endpoint — AI inside the company boundary.</p></div>
+<div class="pm-feature"><h3>GPU + Runtime Manager</h3><p>Metal / CUDA / Vulkan with smart CPU fallback, plus diagnostics and recovery tools for real deployment.</p></div>
+<div class="pm-feature"><h3>Backup, Storage &amp; Security</h3><p>Backup &amp; restore, storage controls, and security settings designed for real machines — not demos.</p></div>
+<div class="pm-feature"><h3>Privacy-First Design</h3><p>Offline by default. Online only when it matters. No developer cloud collecting your private conversations.</p></div>
+      </div>
+      <div class="pm-panel" style="margin-top:22px">
+        <h3>Desktop workspace + Android companion</h3>
+        <p class="pm-desc" style="margin-bottom:0">The desktop app is the full PocketMind Hybrid AI workspace for Mac, Windows, and Linux — sidebar navigation for Chat History, Knowledge Chat, Models, Files, Image Studio, and Voice, with action tiles for day-to-day work including Fortinet SOC Copilot. Android brings the same hybrid privacy model to a portable form factor. One product family: private local intelligence, online power on demand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="projects">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag">Portfolio</p>
+      <h2 class="section-title">24 Projects in <em>AI &amp; Beyond</em></h2>
+      <div class="filters" id="project-filters" role="group" aria-label="Filter projects">
+        <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" type="button" data-filter="cv" aria-pressed="false">Computer Vision</button>
+        <button class="filter-btn" type="button" data-filter="nlp" aria-pressed="false">NLP</button>
+        <button class="filter-btn" type="button" data-filter="dl" aria-pressed="false">Deep Learning</button>
+        <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web / Full-Stack</button>
+        <button class="filter-btn" type="button" data-filter="ml" aria-pressed="false">Machine Learning</button>
+      </div>
+      <div class="projects-grid">
+        <article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-1.jpg" alt="AI-Powered Smart Surveillance System" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>AI-Powered Smart Surveillance System</h3>
+    <p>Real-time intruder detection combining motion sensing and night vision. Sends automated email alerts with snapshot evidence and maintains a persistent event log for security review.</p>
+    <div class="card-meta">
+      <span class="pill">Python · OpenCV · Email API</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/AI-Powered-Smart-Surveillance-System" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-2.jpg" alt="Real-time Object Detection &amp; Tracking" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>Real-time Object Detection &amp; Tracking</h3>
+    <p>Multi-object detection and tracking with persistent ID assignment across frames. Supports live webcam and video file input with real-time bounding box visualisation.</p>
+    <div class="card-meta">
+      <span class="pill">YOLOv8 · DeepSORT · OpenCV</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/CodeAlpha_object-detection-system" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-3.jpg" alt="Face Recognition System" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>Face Recognition System</h3>
+    <p>End-to-end face recognition pipeline using deep learning embeddings to detect, register, and identify individuals from images and live webcam streams.</p>
+    <div class="card-meta">
+      <span class="pill">Deep Learning · OpenCV · Python</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/Face-detection-system" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-4.jpg" alt="AI Hand Gesture Recognition" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>AI Hand Gesture Recognition</h3>
+    <p>Real-time sign language recognition converting hand gestures into text and speech. Uses CNN classification on MediaPipe landmarks with interactive sentence construction.</p>
+    <div class="card-meta">
+      <span class="pill">CNN · MediaPipe · OpenCV · TTS</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/AI-hand-gesture-recognition" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-5.jpg" alt="Medical Image Segmentation" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>Medical Image Segmentation</h3>
+    <p>Deep learning chest X-ray segmentation with complete training, evaluation, and inference pipelines — designed to assist radiologists in identifying regions of interest.</p>
+    <div class="card-meta">
+      <span class="pill">TensorFlow · OpenCV · Python</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/medical-image-segmentation" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-6.jpg" alt="Deepfake Detector" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>Deepfake Detector</h3>
+    <p>Binary classification system detecting AI-generated deepfake images and videos. Trained to identify subtle manipulation artefacts missed by the human eye.</p>
+    <div class="card-meta">
+      <span class="pill">Deep Learning · CNN · Python</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/deepfake-detector" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv">
+  <img src="assets/screenshots/project-7.jpg" alt="Cartoonify Image" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision</p>
+    <h3>Cartoonify Image</h3>
+    <p>Computer vision pipeline transforming photos into cartoon artwork using adaptive thresholding and bilateral filtering — a clean showcase of classical image processing without deep learning.</p>
+    <div class="card-meta">
+      <span class="pill">OpenCV · Bilateral Filtering · Python</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/cartoonify-image" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="dl nlp">
+  <img src="assets/screenshots/project-8.jpg" alt="Emotion Recognition from Speech" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Deep Learning · NLP</p>
+    <h3>Emotion Recognition from Speech</h3>
+    <p>Speech emotion recognition extracting MFCC, Chroma, and Mel Spectrogram features from audio. Trained on RAVDESS to classify emotions like happiness, sadness, anger, and fear.</p>
+    <div class="card-meta">
+      <span class="pill">Librosa · MFCC · RAVDESS · Neural Network</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/CodeAlpha_emotion-recognition-from-speech" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="dl">
+  <img src="assets/screenshots/project-9.jpg" alt="AI Music Generation (LSTM)" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Deep Learning</p>
+    <h3>AI Music Generation (LSTM)</h3>
+    <p>LSTM network trained on classical MIDI datasets to compose original melodies. Features an automated generation pipeline producing novel musical sequences.</p>
+    <div class="card-meta">
+      <span class="pill">LSTM · MIDI · TensorFlow</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/CodeAlpha_Music-generation-AI" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="dl cv">
+  <img src="assets/screenshots/project-10.jpg" alt="Handwritten Digit Recognizer" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Deep Learning · Computer Vision</p>
+    <h3>Handwritten Digit Recognizer</h3>
+    <p>CNN digit recogniser with a live Tkinter GUI canvas. Draw any digit with your mouse and receive instant model predictions from a network trained on MNIST.</p>
+    <div class="card-meta">
+      <span class="pill">CNN · MNIST · Tkinter</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/handwritten-digit-recognizer" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="dl cv">
+  <img src="assets/screenshots/project-11.jpg" alt="Image Recognition Model" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Deep Learning · Computer Vision</p>
+    <h3>Image Recognition Model</h3>
+    <p>Modular image classification system with reproducible training pipelines, evaluation scripts, and a custom inference interface for classifying objects in unseen images.</p>
+    <div class="card-meta">
+      <span class="pill">Deep Learning · TensorFlow · Python</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/Image-Recognition-Model" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="nlp ml">
+  <img src="assets/screenshots/project-12.jpg" alt="AI Resume Matcher" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">NLP · Machine Learning</p>
+    <h3>AI Resume Matcher</h3>
+    <p>Full-stack NLP application that parses resumes, extracts skills, and semantically ranks candidates against job descriptions using Sentence-BERT embeddings.</p>
+    <div class="card-meta">
+      <span class="pill">Sentence-BERT · NLP · FastAPI</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/AI-Resume-Matcher" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="nlp web">
+  <img src="assets/screenshots/project-13.jpg" alt="Intelligent Phone Recommendation Chatbot" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">NLP · Web / Full-Stack</p>
+    <h3>Intelligent Phone Recommendation Chatbot</h3>
+    <p>Production-ready AI chatbot delivering personalised phone recommendations via natural language, powered by Groq AI through a high-performance FastAPI backend.</p>
+    <div class="card-meta">
+      <span class="pill">FastAPI · Groq AI · HTML/JS</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/Intelligent-Phone-Recommendation-Chatbot" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="nlp web">
+  <img src="assets/screenshots/project-14.jpg" alt="FAQ Chatbot (NLP)" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">NLP · Web / Full-Stack</p>
+    <h3>FAQ Chatbot (NLP)</h3>
+    <p>NLP chatbot using TF-IDF vectorisation and cosine similarity to match user queries to the best answers in a product knowledge base, deployed with a Flask web interface.</p>
+    <div class="card-meta">
+      <span class="pill">TF-IDF · Cosine Similarity · Flask</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/CodeAlpha_faq-chatbot" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="nlp web">
+  <img src="assets/screenshots/project-15.jpg" alt="Language Translation Web App" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">NLP · Web / Full-Stack</p>
+    <h3>Language Translation Web App</h3>
+    <p>Real-time translation web app supporting English, Urdu, Spanish, and French, with a dynamic JS frontend and Flask backend for instant multi-language translation.</p>
+    <div class="card-meta">
+      <span class="pill">Flask · JavaScript · Google Translate API</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/CodeAlpha_language-translator" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="nlp ml">
+  <img src="assets/screenshots/project-16.jpg" alt="Spam Email Detector" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">NLP · Machine Learning</p>
+    <h3>Spam Email Detector</h3>
+    <p>ML spam classifier trained on 5,574 real SMS/email samples using TF-IDF and ensemble methods, with a Flask API for real-time ham/spam classification.</p>
+    <div class="card-meta">
+      <span class="pill">TF-IDF · Ensemble ML · Flask</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/spam-email-detector" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="ml">
+  <img src="assets/screenshots/project-17.jpg" alt="Credit Scoring Model" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Machine Learning</p>
+    <h3>Credit Scoring Model</h3>
+    <p>Credit scoring system using financial history and engineered ratios to predict borrower creditworthiness. Benchmarks multiple classifiers with comprehensive evaluation reports.</p>
+    <div class="card-meta">
+      <span class="pill">Scikit-learn · Feature Engineering</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/CodeAlpha_credit-scoring-model" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="ml">
+  <img src="assets/screenshots/project-18.jpg" alt="Time Series Forecasting Toolkit" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Machine Learning</p>
+    <h3>Time Series Forecasting Toolkit</h3>
+    <p>Modular toolkit implementing Moving Average, Exponential Smoothing, and ARIMA models with clean architecture, an example dataset, and ready-to-run forecasting pipelines.</p>
+    <div class="card-meta">
+      <span class="pill">Python · ARIMA · Exponential Smoothing</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/time-series-forecasting" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="ml web">
+  <img src="assets/screenshots/project-19.jpg" alt="House Price Predictor" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Machine Learning · Web / Full-Stack</p>
+    <h3>House Price Predictor</h3>
+    <p>End-to-end ML pipeline predicting real estate prices from property features, deployed as an interactive Streamlit web application.</p>
+    <div class="card-meta">
+      <span class="pill">Scikit-learn · Streamlit · Python</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/house-price-predictor" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="nlp web">
+  <img src="assets/screenshots/project-20.jpg" alt="Samsung Sales Chatbot" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">NLP · Web / Full-Stack</p>
+    <h3>Samsung Sales Chatbot</h3>
+    <p>Interactive Samsung product chatbot providing intelligent recommendations and answering queries, powered by OpenAI through a FastAPI backend with a conversational UI.</p>
+    <div class="card-meta">
+      <span class="pill">FastAPI · OpenAI API · HTML/JS</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/Samsung-sales-chatbot" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="web ml">
+  <img src="assets/screenshots/project-21.jpg" alt="Chess AI (Web App)" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Web / Full-Stack · Machine Learning</p>
+    <h3>Chess AI (Web App)</h3>
+    <p>Web chess game with Player vs Player and Player vs AI modes, full legal move validation, check/checkmate detection, and a Minimax AI engine with alpha-beta pruning.</p>
+    <div class="card-meta">
+      <span class="pill">Flask · JavaScript · Minimax AI</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/chess-project" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="web ml">
+  <img src="assets/screenshots/project-22.jpg" alt="Price Comparison Web Scraper" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Web / Full-Stack · Machine Learning</p>
+    <h3>Price Comparison Web Scraper</h3>
+    <p>Web scraper extracting product prices and ratings from Daraz and Amazon, combined with AI-driven recommendations to help buyers find the best alternatives.</p>
+    <div class="card-meta">
+      <span class="pill">Python · BeautifulSoup · Flask</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/price-fighter" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-23.jpg" alt="Augmented Reality Prototype" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>Augmented Reality Prototype</h3>
+    <p>AR prototype demonstrating real-time virtual object overlay onto live camera feeds using marker detection, homography transforms, and OpenCV computer vision.</p>
+    <div class="card-meta">
+      <span class="pill">Python · OpenCV · AR</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/augmented-reality-project" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+<article class="card project-card" data-tags="cv dl">
+  <img src="assets/screenshots/project-24.jpg" alt="Point Cloud Sparse Segmentation" width="640" height="360" loading="lazy">
+  <div class="card-body">
+    <p class="card-kicker">Computer Vision · Deep Learning</p>
+    <h3>Point Cloud Sparse Segmentation</h3>
+    <p>3D point cloud segmentation system using sparse convolutional networks to classify and segment objects in LiDAR-style spatial data — a frontier technique in autonomous vehicle perception and robotics.</p>
+    <div class="card-meta">
+      <span class="pill">Python · Sparse CNN · 3D Vision</span>
+      <a class="card-link" href="https://github.com/noumanshakeil/point-sparse-segmentation" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </div>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="section-inner">
+      <p class="section-tag">Privacy &amp; Trust</p>
+      <h2 class="section-title">Built for <em>control</em></h2>
+      <div class="privacy-grid">
+        <div>
+          <h3>Privacy policy access</h3>
+          <p class="pm-desc">Store-listing policies for PocketMind: AI Receptionist Studio and PocketMind AI: Reviewer And Humanizer live on this same page, instantly readable, at the permanent hashes below. The Android Hybrid AI policy from the earlier portfolio is kept at a new hash so it does not overwrite the Studio store URL.</p>
+          <div class="policy-links">
+            <a class="btn btn-primary" href="#privacy-policy">Receptionist Studio policy</a>
+            <a class="btn btn-ghost" href="#privacy-reviewer-and-humanizer">Reviewer &amp; Humanizer</a>
+            <a class="btn btn-ghost" href="#privacy-hybrid-ai">Hybrid AI (Android)</a>
+          </div>
+          <div class="policy-links">
+            <a class="card-link" href="privacy-localchat.html">Local Chat policy</a>
+            <a class="card-link" href="privacy-imagelab.html">Image Lab policy</a>
+            <a class="card-link" href="privacy-voicelab.html">Voice Lab policy</a>
+            <a class="card-link" href="privacy-characters.html">Characters policy</a>
+          </div>
+        </div>
+        <div class="privacy-list">
+          <div class="privacy-item"><strong>Offline chat stays on-device</strong><span>Offline chat and local model inference are processed on your phone. Unlimited offline chat is available on the free tier.</span></div>
+          <div class="privacy-item"><strong>Online features are optional</strong><span>Cloud chat, image, and voice providers are contacted only when you choose those modes. Premium online chat can use your own API keys (BYOK).</span></div>
+          <div class="privacy-item"><strong>Voice &amp; Image Studio</strong><span>Voice generation/cloning and Image Studio require PocketMind Pro. Online voice may send text and, for cloning, reference audio to the selected provider.</span></div>
+          <div class="privacy-item"><strong>No ads on your chats</strong><span>PocketMind is not designed to sell your conversations for advertising. Purchases use Google Play Billing.</span></div>
+        </div>
+      </div>
+
+      <div class="policy-stack">
+        <section id="privacy-policy" class="card studio-policy" aria-labelledby="privacy-heading">
       <div class="studio-head">
         <img src="brand/pocketmind-logo-mark.png" alt="" width="40" height="40" />
         <div>
@@ -373,8 +767,7 @@
         </p>
       </div>
     </section>
-
-    <section id="privacy-reviewer-and-humanizer" class="card" aria-labelledby="reviewer-privacy-heading">
+        <section id="privacy-reviewer-and-humanizer" class="card" aria-labelledby="reviewer-privacy-heading">
       <p class="brand" style="margin-bottom:0.35rem">PocketMind AI: Reviewer And Humanizer</p>
       <h2 id="reviewer-privacy-heading">Privacy policy</h2>
       <div class="policy-meta">
@@ -430,27 +823,859 @@
         </p>
       </div>
     </section>
+        <section id="privacy-hybrid-ai" class="hybrid-policy" aria-labelledby="hybrid-privacy-heading">
+          <p class="section-tag">Full Policy · Android</p>
+          <h2 id="hybrid-privacy-heading">PocketMind Hybrid AI privacy policy</h2>
+          <p class="pm-desc">This is the Android Hybrid AI policy previously published on the starting portfolio at <span class="url">#privacy-policy</span>. On this host that hash is reserved for PocketMind: AI Receptionist Studio.</p>
+          
 
-    <footer>
-      PocketMind ·
-      <a href="#privacy-policy">Privacy policy</a> ·
-      <a href="#privacy-reviewer-and-humanizer">Reviewer &amp; Humanizer</a> ·
-      <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a>
-      · Hosted on GitHub Pages
-    </footer>
+    <div class="pm-kicker">Public Privacy Policy</div>
+    <h1>PocketMind <em>Hybrid AI</em></h1>
+    <div class="policy-meta">Effective Date: September 7, 2026 · Last Updated: September 7, 2026 · Developer: Muhammad Nouman Shakeel / PocketMind · Country: Pakistan</div>
+    <p>This Privacy Policy describes how PocketMind Hybrid AI for Android (“PocketMind,” “the App,” “we,” “our,” or “us”) handles information when you install and use the App. PocketMind is a hybrid AI assistant that can run AI features on your device (offline) and, when you choose, connect to third-party online AI services, your organization’s private AI server, Google Play Billing, and related platform services.</p>
+    <p>By downloading, installing, or using the App, you acknowledge that you have read this Privacy Policy. If you do not agree, do not use the App’s online, voice, image, organization-server, or paid features that require data processing beyond local on-device storage.</p>
+    <div class="policy-callout"><strong>Plain-language summary:</strong> We do not operate a PocketMind-owned cloud account service that stores your private chats for us to sell or advertise against. Most personal content stays on your phone unless <em>you</em> choose an online model, Image Studio online mode, Voice Studio online mode, model download, organization server, or a Google Play purchase. Third parties you select (and Google Play, where purchases are involved) process data under <em>their</em> policies—not under ours alone.</div>
+
+    <h2>1. Scope and Roles</h2>
+    <p><strong>1.1 What this policy covers.</strong> This policy covers the PocketMind Hybrid AI Android application distributed through Google Play (application identity associated with PocketMind Hybrid AI) and related in-app features described below.</p>
+    <p><strong>1.2 What this policy does not cover.</strong> This policy does not govern websites, APIs, models, or servers operated by third parties (for example Groq, Google Gemini / Google AI, OpenRouter, Hugging Face, Together AI, Pollinations, OpenAI, ElevenLabs, your employer’s organization server, or Google Play). When content leaves your device to those services, their privacy policies and terms apply in addition to this policy.</p>
+    <p><strong>1.3 Controller / developer.</strong> For local app storage and the PocketMind product experience, the developer is Muhammad Nouman Shakeel (PocketMind), Pakistan. For purchase processing, Google LLC / Google Play acts as payment processor. For AI inference you request online, the selected provider acts as an independent processor/controller of that request content under its own terms.</p>
+
+    <h2>2. Information We Do Not Collect on PocketMind-Operated Servers</h2>
+    <p>PocketMind does <strong>not</strong> currently operate a developer-owned backend that creates user accounts for PocketMind, hosts your chat history in a PocketMind cloud inbox, or sells your conversation content to advertisers.</p>
+    <p>In particular, we do not intentionally:</p>
+    <ul>
+      <li>Sell your personal data or private chat content;</li>
+      <li>Use your private chats to build advertising profiles for third-party ads in the App;</li>
+      <li>Require you to create a PocketMind cloud login to use core local chat;</li>
+      <li>Upload your locally stored API keys to a PocketMind-owned server.</li>
+    </ul>
+    <p><strong>Important limitation:</strong> “We do not collect on PocketMind servers” does <em>not</em> mean “nothing ever leaves your phone.” Content leaves your phone when you use online AI, downloads, organization servers, or Google Play. Android, Google Play Services, and network carriers may also process technical data according to their own policies.</p>
+
+    <h2>3. Information Stored Locally on Your Device</h2>
+    <p>Depending on how you use the App, PocketMind may store information in on-device app storage (and related Android storage you authorize), including without limitation:</p>
+    <ul>
+      <li>Chat messages, chat session titles, pinned/saved chats, and related metadata;</li>
+      <li>Custom characters / assistants, system prompts, and prompt-library entries;</li>
+      <li>App settings (theme, performance options such as Vulkan/GPU preferences where available, memory/creativity settings, selected models, feature toggles);</li>
+      <li>API keys and access tokens you choose to save (for example Groq, Gemini, OpenRouter, Hugging Face, Together AI, Pollinations, OpenAI, ElevenLabs, and organization-server access keys);</li>
+      <li>Organization server address, selected organization model id, and connection preferences;</li>
+      <li>Freemium usage counters (for example daily free-tier online chat quota) and entitlement flags (for example PocketMind Pro subscription status mirrors, lifetime unlock from a prior paid-app upgrade where applicable);</li>
+      <li>Downloaded or imported offline chat models (for example GGUF files), offline image model files, caches, and temporary working files;</li>
+      <li>Extracted text from documents you attach;</li>
+      <li>Generated images, generated/synthesized audio files (for example under app-private voice output folders), and reference audio paths you select for cloning;</li>
+      <li>Backup/export files if you create them.</li>
+    </ul>
+    <p>Local storage remains on your device until you delete it, clear app data, uninstall the App, or otherwise remove those files. Device backups (Android backup / manufacturer cloud backup), if enabled by you or your device settings, may copy app data off-device under those systems’ rules.</p>
+
+    <h2>4. Freemium Features, Quotas, and PocketMind Pro</h2>
+    <p>PocketMind offers a freemium experience. Exact limits may change with product updates, but as of this policy’s last update the App is designed around the following model:</p>
+    <ul>
+      <li><strong>Free — offline chat:</strong> Unlimited chat with offline/local models (subject to your device capability and available models).</li>
+      <li><strong>Free — free-tier online chat:</strong> A limited number of free-tier online chat prompts per local calendar day (currently five). Quota counters are stored locally on your device.</li>
+      <li><strong>Free — premium online chat with your own keys (BYOK):</strong> Unlimited premium online chat when you supply and use your own provider API keys, subject to the provider’s billing and limits.</li>
+      <li><strong>PocketMind Pro:</strong> Unlocks Image Studio and Voice Studio (voice generation and voice cloning). Pro is offered via Google Play subscriptions (product ids such as <code>pocketmind_pro_monthly</code> and <code>pocketmind_pro_yearly</code>). Eligible upgrades from a prior paid app version may receive a lifetime unlock recorded locally and validated against Play where applicable.</li>
+    </ul>
+    <p>Entitlement state may be stored on-device and refreshed through Google Play Billing purchase/restore flows. We do not invent a separate PocketMind payment account; billing identity is handled by Google under your Google account.</p>
+
+    <h2>5. API Keys and Bring-Your-Own-Key (BYOK)</h2>
+    <p>PocketMind allows you to enter API keys / tokens for supported providers. Those credentials are stored locally on your device and are transmitted from your device to the selected provider when you validate a key or run a request.</p>
+    <p>You are solely responsible for:</p>
+    <ul>
+      <li>Keeping keys confidential;</li>
+      <li>Complying with each provider’s terms, acceptable-use rules, age requirements, rate limits, and fees;</li>
+      <li>Revoking keys if your device is lost, shared, or compromised;</li>
+      <li>Understanding that anyone with physical or backup access to an unlocked device may be able to access locally stored keys.</li>
+    </ul>
+
+    <h2>6. Offline AI Processing</h2>
+    <p>When you select offline/local models, PocketMind processes prompts and generates responses on your device using on-device model runtimes (for example local LLM inference). In true offline mode, PocketMind does not send those prompts to online chat providers.</p>
+    <p>Offline features may still require Internet for one-time actions you initiate, such as downloading a model file from a hosting provider (for example Hugging Face model repositories). After download, local inference can proceed without sending chat content to that host.</p>
+    <p>Offline performance and availability depend on your hardware (CPU/GPU/Vulkan support where used), RAM, storage, thermal limits, and selected model size. Some catalogued neural voice engines may be listed for future/on-device use while the currently guaranteed offline speech path uses Android System Text-to-Speech where implemented.</p>
+
+    <h2>7. Online Chat Processing</h2>
+    <p>If you select an online chat model, PocketMind sends request data from your device directly to the selected provider over the Internet. Depending on the model and settings, this may include:</p>
+    <ul>
+      <li>Your prompt and conversation context / recent messages;</li>
+      <li>System prompts, character instructions, and similar configuration text;</li>
+      <li>Extracted document text from attachments;</li>
+      <li>Image data for vision-capable models (encoded as required by the provider);</li>
+      <li>Your API key / bearer token;</li>
+      <li>Technical HTTP metadata required to complete the request (for example User-Agent and, for some providers such as OpenRouter, app attribution headers like a referer / app name used for rate-limiting and provider analytics).</li>
+    </ul>
+    <p>PocketMind does not control how third-party providers log, retain, train on, review, or further process content after receipt. Review each provider’s privacy policy before sending personal, confidential, biometric, medical, legal, or otherwise sensitive information.</p>
+
+    <h2>8. Organization / Company Server Mode</h2>
+    <p>If you configure Organization Server mode, PocketMind connects to a server address and access token that <strong>you</strong> (or your organization) provide. Expected integrations are OpenAI-compatible private gateways (for example vLLM, llama.cpp server, LiteLLM, LocalAI-style proxies, or a company-hosted gateway).</p>
+    <p>In this mode, prompts, context, and related request data are sent to that server under your organization’s control and policies. PocketMind is not responsible for your organization’s retention, monitoring, HR, security, or compliance practices. Free-tier online quota accounting in the App may treat organization-server usage as counting toward free online usage limits where the product logic so provides.</p>
+
+    <h2>9. Documents, Files, and Knowledge Features</h2>
+    <p>You may attach or import files such as PDF, DOCX, TXT, code, CSV, JSON, logs, and similar formats. The App may extract text or otherwise prepare content for the selected AI mode.</p>
+    <ul>
+      <li><strong>Offline models:</strong> Extracted content is processed locally for that request path.</li>
+      <li><strong>Online models / organization server:</strong> Extracted content may be included in outbound requests.</li>
+    </ul>
+    <p>Do not attach files you are not authorized to process. You are responsible for complying with workplace, school, and confidentiality rules.</p>
+
+    <h2>10. Image Attachments and Vision</h2>
+    <p>For vision-capable online models, attached images may be encoded and transmitted to the selected provider. Offline text-only models typically cannot interpret raw image pixels. Image contents may reveal faces, locations, documents, or other sensitive information—review before sending online.</p>
+
+    <h2>11. Image Studio (Image Generation)</h2>
+    <p>Image Studio lets you generate images offline (local image models when available) or online (providers such as Hugging Face, Together AI, Pollinations, and other catalogued image endpoints). Access to Image Studio is a PocketMind Pro feature.</p>
+    <p>When you generate online, your prompt, style/size/detail settings, and authentication material may be sent to the selected image provider. Generated images may be saved locally if you choose. Offline generation keeps the prompt/model work on-device for that path, aside from any model download you previously initiated.</p>
+
+    <h2>12. Voice Studio — Voice Generation and Voice Cloning</h2>
+    <p>Voice Studio provides text-to-speech generation and voice-cloning workflows. Access requires PocketMind Pro. Depending on the selected tier and model:</p>
+    <ul>
+      <li><strong>Offline / on-device:</strong> Android System Text-to-Speech may synthesize audio locally. Catalogued neural offline engines may be offered as they are supported; availability can vary by build.</li>
+      <li><strong>Free online voice:</strong> Text may be sent to Hugging Face Inference (or similar catalogued free online voice endpoints) using keys/configuration as implemented in the App.</li>
+      <li><strong>Premium online voice:</strong> Text (and for cloning, reference audio) may be sent to providers such as OpenAI Audio Speech APIs and ElevenLabs text-to-speech / cloning endpoints using your own API keys.</li>
+    </ul>
+    <p><strong>Microphone and audio.</strong> The App may request microphone / audio recording permission (Android <code>RECORD_AUDIO</code>) so you can capture speech or reference clips. Audio may also be imported from files you select. Synthesized outputs may be written to app-private storage (for example a voice output directory) and played back on device.</p>
+    <p><strong>High-risk disclosure — voice cloning:</strong> Reference audio and cloned-voice outputs can be biometric or otherwise sensitive. If you upload another person’s voice, you must have all rights and consents required by law. Do not use Voice Studio to impersonate someone without authorization, to commit fraud, or to violate platform or provider rules. Online cloning transmits reference audio to the selected provider; PocketMind cannot delete data from that provider on your behalf.</p>
+
+    <h2>13. Google Play Billing and Purchase Data</h2>
+    <p>Subscriptions and in-app purchases are processed by Google Play Billing. Google may receive and process purchase tokens, product identifiers (for example monthly/yearly Pro SKUs), order data, and account/device information necessary to complete, acknowledge, restore, or refund purchases under Google’s Privacy Policy and Google Play Terms.</p>
+    <p>PocketMind may store local entitlement flags so the App can unlock Pro features. Purchase disputes, refunds, and payment methods are handled through Google Play, not through a PocketMind payment portal.</p>
+
+    <h2>14. Model Downloads and Hosting Platforms</h2>
+    <p>When you download offline chat or image models, the App may contact hosting platforms (commonly Hugging Face repositories or similar URLs in the catalog) to fetch model files. Those platforms may log IP address, request metadata, and authentication if a token is required. Model files can be large and remain on your device until deleted.</p>
+
+    <h2>15. Permissions</h2>
+    <p>Depending on Android version and the feature you use, PocketMind may request or use:</p>
+    <ul>
+      <li><strong>Internet</strong> — online chat, image, voice, key validation, model downloads, organization server, Play Billing connectivity;</li>
+      <li><strong>Microphone / record audio</strong> — voice capture and related Voice Studio flows;</li>
+      <li><strong>Notifications</strong> — optional alerts (for example downloads or response readiness), where implemented;</li>
+      <li><strong>Wake lock</strong> — keep the device awake during long-running local inference or downloads where needed;</li>
+      <li><strong>Photos / files / documents</strong> — via Android photo pickers, document pickers, or storage access when you attach files, import models, or save outputs.</li>
+    </ul>
+    <p>You can deny non-essential permissions; related features may then be unavailable.</p>
+
+    <h2>16. Third-Party Services (Non-Exhaustive)</h2>
+    <p>Depending on your choices, PocketMind may communicate with services such as:</p>
+    <ul>
+      <li>Groq;</li>
+      <li>Google Gemini / Google AI developer APIs;</li>
+      <li>OpenRouter;</li>
+      <li>Hugging Face (router / inference / model downloads);</li>
+      <li>Together AI;</li>
+      <li>Pollinations (and related image endpoints);</li>
+      <li>OpenAI (including audio speech APIs when configured);</li>
+      <li>ElevenLabs (including text-to-speech / cloning when configured);</li>
+      <li>Your configured organization / company AI server;</li>
+      <li>Google Play / Google Play Billing / Android system services (including System TTS engines provided by the device).</li>
+    </ul>
+    <p>Provider catalogs change over time. The in-app Models / Voice / Image hubs are the authoritative list of currently offered integrations for your installed version.</p>
+
+    <h2>17. Analytics, Advertising, and Tracking</h2>
+    <p>PocketMind is designed around AI product functionality. The App does not currently integrate a separate third-party advertising SDK for the purpose of selling your chat content to advertisers. We also do not currently operate PocketMind-owned product-analytics servers that ingest your chat transcripts.</p>
+    <p>Nevertheless, Android, Google Play, crash/diagnostics facilities you enable at the OS level, and third-party AI providers may collect technical or request logs independently. Those activities are governed by those parties’ policies.</p>
+
+    <h2>18. Data Sharing</h2>
+    <p>We do not sell your personal data. Information may leave your device when:</p>
+    <ul>
+      <li>You choose an online, image, voice, download, or organization-server feature;</li>
+      <li>You purchase or restore PocketMind Pro through Google Play;</li>
+      <li>Disclosure is required by law, lawful government request, or to protect rights, safety, and security where legally permitted.</li>
+    </ul>
+
+    <h2>19. Retention and Deletion</h2>
+    <p><strong>On device:</strong> Local data remains until you delete chats/keys/models/outputs, clear app storage, or uninstall. Uninstalling removes app-private storage but does not erase data already sent to third parties, nor files you exported to shared storage.</p>
+    <p><strong>With third parties:</strong> Retention is controlled by the provider or your organization. To delete provider-side data, use that provider’s tools or contact them directly. PocketMind cannot guarantee deletion from third-party systems.</p>
+    <p><strong>Requests to the developer:</strong> Because we do not host your chat history on a PocketMind cloud account, we generally cannot retrieve or remotely wipe device-local chats. Contact us if you need help understanding deletion steps on your device.</p>
+
+    <h2>20. Security</h2>
+    <p>We design the App to limit processing to what a feature needs and to keep keys and chats in app storage by default. No method of electronic storage or transmission is completely secure. You are responsible for device lock screens, OS updates, shared-device hygiene, exported backups, and API key rotation.</p>
+
+    <h2>21. Children’s Privacy</h2>
+    <p>PocketMind is not directed to children under 13 (or the minimum age required in your jurisdiction for AI / online services without verifiable parental consent). We do not knowingly collect personal information from children under 13 on a PocketMind-operated server. If you believe a child has provided sensitive information through online providers via the App, stop use, delete local data, revoke API keys, and contact the relevant provider and us as appropriate.</p>
+
+    <h2>22. Sensitive and Regulated Use; Professional Disclaimer</h2>
+    <p>Do not use PocketMind as a substitute for professional medical, legal, financial, mental-health, or other licensed advice. AI outputs may be wrong or unsafe. If you process special-category or regulated data (health, biometrics, government IDs, children’s data, trade secrets), you must ensure you have a lawful basis and that any third-party provider you select is appropriate for that data.</p>
+
+    <h2>23. AI Output Accuracy and Acceptable Use</h2>
+    <p>AI-generated text, images, and audio may be inaccurate, biased, infringing, offensive, or misleading. You are responsible for reviewing outputs before use. You agree not to use the App to violate law, infringe others’ rights, create non-consensual intimate imagery, commit fraud/impersonation, or breach provider acceptable-use policies.</p>
+
+    <h2>24. International Transfers</h2>
+    <p>If you are outside Pakistan (or outside a provider’s home region), online features may transfer your prompts, files, audio, images, and metadata to servers in other countries. Those countries may have different data-protection laws than your own.</p>
+
+    <h2>25. Your Choices and Rights</h2>
+    <p>Depending on your location, you may have rights to access, correct, delete, or restrict certain processing, or to lodge a complaint with a supervisory authority. Because most PocketMind content is stored on your device, many rights are exercised by using in-app deletion controls and Android settings. For Google Play purchases, use Google account/Play tools. For provider-held data, contact that provider. Contact us using the details below for questions about this policy.</p>
+
+    <h2>26. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy to reflect new features (including voice, image, freemium, billing, or provider changes), legal requirements, or security improvements. The updated version will be posted at this same public privacy policy location (this website’s <strong>#privacy-policy</strong> URL) with an updated “Last Updated” date. Continued use of the App after an update means you acknowledge the revised policy. Material changes may also be described in the Google Play listing where appropriate.</p>
+
+    <h2>27. Contact</h2>
+    <p>For privacy questions, deletion guidance, or support regarding this policy, contact the developer:</p>
+    <p>Muhammad Nouman Shakeel / PocketMind<br>Phone / WhatsApp: +92 340 5055603</p>
+    <p>Please do not send passwords or full API keys over unsecured channels. If you must discuss a compromised key, revoke it at the provider first.</p>
+    
+    
+  
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="achievements">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag">Recognition</p>
+      <h2 class="section-title">Awards &amp; <em>Honours</em></h2>
+      <div class="achievements-grid">
+        <article class="card achievement-card"><div class="icon" aria-hidden="true">🏆</div><h3>34 Trophies &amp; 39 Certificates</h3><p>Broad recognition across academic excellence, technology competitions, and sports achievements throughout my educational career.</p></article>
+        <article class="card achievement-card"><div class="icon" aria-hidden="true">🥇</div><h3>Topped ETEA ’25 CS — KPK</h3><p>1st position in the ETEA 2025 Computer Science examination across KPK — topping ETEA ’25 CS province-wide.</p></article>
+        <article class="card achievement-card"><div class="icon" aria-hidden="true">🌍</div><h3>International Finalist — Hippo Competition, Turkey</h3><p>Represented Pakistan as a finalist in the prestigious Hippo International Language Competition held in Turkey.</p></article>
+        <article class="card achievement-card"><div class="icon" aria-hidden="true">🇵🇰</div><h3>Top of Pakistan — English Proficiency Olympiads (×2)</h3><p>Achieved the highest national ranking in English Language Proficiency Olympiads on two separate occasions.</p></article>
+        <article class="card achievement-card"><div class="icon" aria-hidden="true">⭐</div><h3>Student of the Year — The Peace College</h3><p>Awarded the highest institutional honour for outstanding academic performance, leadership, and community contribution.</p></article>
+        <article class="card achievement-card"><div class="icon" aria-hidden="true">🎓</div><h3>NUST — Top-Ranked University</h3><p>Earned admission to NUST's competitive BS AI programme, known for producing elite engineers and AI researchers.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certificates">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag">Credentials</p>
+      <h2 class="section-title">Certificates &amp; <em>Credentials</em></h2>
+      <p class="cert-count">39 Certificates &amp; Credentials</p>
+      <div class="filters" id="cert-filters" role="group" aria-label="Filter certificates">
+        <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
+        <button class="filter-btn" type="button" data-filter="programming" aria-pressed="false">Programming</button>
+        <button class="filter-btn" type="button" data-filter="academic" aria-pressed="false">Academic</button>
+        <button class="filter-btn" type="button" data-filter="sports" aria-pressed="false">Sports</button>
+        <button class="filter-btn" type="button" data-filter="leadership" aria-pressed="false">Leadership</button>
+        <button class="filter-btn" type="button" data-filter="professional" aria-pressed="false">Professional</button>
+        <button class="filter-btn" type="button" data-filter="internship" aria-pressed="false">Internship</button>
+      </div>
+      <div class="cert-grid">
+        <article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">G</div>
+    <div>
+      <h3>Learn AI for Web Developers</h3>
+      <p class="card-kicker" style="margin:0">Google</p>
+    </div>
+  </div>
+  <p>Google's official AI course for developers — covers practical AI integration, working with model APIs, and building intelligent applications using Google's tools and AI ecosystem.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">G</div>
+    <div>
+      <h3>Build a Multimodal AI Agent with Graph RAG, ADK &amp; Memory Bank</h3>
+      <p class="card-kicker" style="margin:0">Google Cloud</p>
+    </div>
+  </div>
+  <p>Advanced Google Cloud codelab building a production AI system combining Spanner graph databases, semantic+keyword hybrid search, multimodal processing (text, image, video), multi-agent orchestration, and long-term personalisation with Vertex AI Memory Bank.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">G</div>
+    <div>
+      <h3>Build a Bargaining Shopkeeper Agent — Gemini 3 &amp; ADK</h3>
+      <p class="card-kicker" style="margin:0">Google Cloud</p>
+    </div>
+  </div>
+  <p>Hands-on codelab using Gemini 3 and Google's Agent Development Kit (ADK) to build a conversational AI sales agent deployed on Google Cloud Run — covering agentic design patterns and LLM-powered negotiation logic.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">G</div>
+    <div>
+      <h3>Building Agents with Retrieval-Augmented Generation</h3>
+      <p class="card-kicker" style="margin:0">Google Cloud</p>
+    </div>
+  </div>
+  <p>End-to-end Agentic RAG codelab on Google Cloud: built a financial analysis agent combining Vertex AI Search over SEC filings with a custom Python tool for stock price data, orchestrated using the Agent Development Kit (ADK).</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    <span class="pill">ID: Vlad Kolesnikov / Google</span>
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">MS</div>
+    <div>
+      <h3>Discover Data Analysis</h3>
+      <p class="card-kicker" style="margin:0">Microsoft</p>
+    </div>
+  </div>
+  <p>Completed Microsoft's official data analysis learning path, covering foundational techniques for interpreting, visualising, and deriving insights from structured datasets.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">MS</div>
+    <div>
+      <h3>Explore AI Basics</h3>
+      <p class="card-kicker" style="margin:0">Microsoft</p>
+    </div>
+  </div>
+  <p>Gained a solid understanding of core AI concepts including machine learning fundamentals, model types, and AI applications in the real world — certified by Microsoft.</p>
+  <div class="card-meta">
+    <span class="pill">2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">MS</div>
+    <div>
+      <h3>Introduction to Generative AI and Agents</h3>
+      <p class="card-kicker" style="margin:0">Microsoft</p>
+    </div>
+  </div>
+  <p>Explored the principles behind generative AI models, large language models, and AI agents, covering transformer architectures and their use in modern AI products.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">MS</div>
+    <div>
+      <h3>Embrace Responsible AI Principles</h3>
+      <p class="card-kicker" style="margin:0">Microsoft</p>
+    </div>
+  </div>
+  <p>Studied Microsoft's responsible AI framework including fairness, reliability, privacy, inclusiveness, and transparency — essential pillars for ethical AI deployment.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="academic">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#78350f;color:#63b3ff">HP</div>
+    <div>
+      <h3>12th Int'l English Language Olympiad 2024</h3>
+      <p class="card-kicker" style="margin:0">HIPPO — English Without Borders</p>
+    </div>
+  </div>
+  <p>Represented Pakistan in the Global Final Round in Turkey after achieving 1st position in Pakistan in the national final. A prestigious international academic honour.</p>
+  <div class="card-meta">
+    <span class="pill">May 2024</span>
+    <span class="pill">ID: Muhammad Nouman Shakeel - 0754</span>
+    <span class="pill">Academic</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="academic">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#78350f;color:#63b3ff">HP</div>
+    <div>
+      <h3>12th Int'l English Language Olympiad — Preliminary</h3>
+      <p class="card-kicker" style="margin:0">HIPPO — English Without Borders</p>
+    </div>
+  </div>
+  <p>Secured 1st position in KPK province and nationally in Pakistan in the preliminary round of the Hippo International English Language Olympiad 2024.</p>
+  <div class="card-meta">
+    <span class="pill">Mar 2024</span>
+    <span class="pill">ID: Muhammad Nouman Shakeel - 0754</span>
+    <span class="pill">Academic</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="leadership">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#2e1065;color:#63b3ff">PC</div>
+    <div>
+      <h3>Student of the Year 2025</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Awarded the highest institutional honour recognising exceptional academic achievement, personal discipline, leadership qualities, and outstanding contributions to college life.</p>
+  <div class="card-meta">
+    <span class="pill">May 2025</span>
+    
+    <span class="pill">Leadership</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="leadership">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#2e1065;color:#63b3ff">PC</div>
+    <div>
+      <h3>President, IT Club — The Peace College</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Elected President of the IT Club, leading technical initiatives, organising coding events, and driving digital literacy programmes across the college community.</p>
+  <div class="card-meta">
+    <span class="pill">May 2024</span>
+    
+    <span class="pill">Leadership</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="academic">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#78350f;color:#63b3ff">PC</div>
+    <div>
+      <h3>1st Position — CS FSc Annual Board Exams</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Achieved first position in the entire college in the Computer Science FSc board examinations — a certificate of excellence recognising top academic performance.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2025</span>
+    
+    <span class="pill">Academic</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="sports">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#7f1d1d;color:#63b3ff">PC</div>
+    <div>
+      <h3>Best Football Player Award</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Recognised as the Best Football Player at the Peace Festival 2024 tournament, awarded for outstanding individual performance, leadership on the field, and sportsmanship.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2025</span>
+    
+    <span class="pill">Sports</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="sports">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#7f1d1d;color:#63b3ff">PC</div>
+    <div>
+      <h3>Football Champions — Peace Festival 2024</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Led the team to first-place victory in the Football Tournament at Peace Festival 2024, demonstrating teamwork, strategy, and athletic excellence.</p>
+  <div class="card-meta">
+    <span class="pill">Nov 2024</span>
+    
+    <span class="pill">Sports</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="academic">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#78350f;color:#63b3ff">PC</div>
+    <div>
+      <h3>Runners Up — Quiz Competition Peace Festival 2024</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Secured runners-up position in the inter-college Quiz Competition at Peace Festival 2024, competing across a broad range of academic and general knowledge topics.</p>
+  <div class="card-meta">
+    <span class="pill">Oct 2024</span>
+    
+    <span class="pill">Academic</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="sports">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#7f1d1d;color:#63b3ff">PC</div>
+    <div>
+      <h3>Football Champions — Peace Festival 2023</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Champions of the Football Tournament at Peace Festival 2023, claiming first place and cementing a track record of consistent athletic excellence across consecutive years.</p>
+  <div class="card-meta">
+    <span class="pill">Oct 2023</span>
+    
+    <span class="pill">Sports</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="academic">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#78350f;color:#63b3ff">PC</div>
+    <div>
+      <h3>2nd Position — Essay Writing Competition 2023</h3>
+      <p class="card-kicker" style="margin:0">The Peace College</p>
+    </div>
+  </div>
+  <p>Secured 2nd place in the Essay Writing Competition at Peace Festival 2023, demonstrating strong analytical writing, argumentation, and communication skills.</p>
+  <div class="card-meta">
+    <span class="pill">Oct 2023</span>
+    
+    <span class="pill">Academic</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="academic">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#78350f;color:#63b3ff">ET</div>
+    <div>
+      <h3>Topped ETEA '25 CS — KPK</h3>
+      <p class="card-kicker" style="margin:0">Educational Testing &amp; Evaluation Agency</p>
+    </div>
+  </div>
+  <p>Topped ETEA ’25 CS — first position in the ETEA 2025 Computer Science examination across KPK province.</p>
+  <div class="card-meta">
+    <span class="pill">Sep 2025</span>
+    
+    <span class="pill">Academic</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="sports">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#7f1d1d;color:#63b3ff">BI</div>
+    <div>
+      <h3>Football Champions — BISE Abbottabad 2023–24</h3>
+      <p class="card-kicker" style="margin:0">BISE Abbottabad</p>
+    </div>
+  </div>
+  <p>Earned inter-college football championship honours under BISE Abbottabad: 2nd position in 2023 and 1st position in 2024, representing the college at the board sports level.</p>
+  <div class="card-meta">
+    <span class="pill">Nov 2023</span>
+    <span class="pill">ID: #899</span>
+    <span class="pill">Sports</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="academic">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#78350f;color:#63b3ff">CL</div>
+    <div>
+      <h3>20th International Kangaroo Linguistic Contest</h3>
+      <p class="card-kicker" style="margin:0">Creative Learning</p>
+    </div>
+  </div>
+  <p>Placed 1st in Haripur District and 20th in Pakistan in this international linguistic contest, competing against thousands of students across the country.</p>
+  <div class="card-meta">
+    <span class="pill">Jan 2023</span>
+    <span class="pill">ID: 23-995-21697-10-041-E</span>
+    <span class="pill">Academic</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">SL</div>
+    <div>
+      <h3>Critical Thinking in the Age of AI</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Completed a course on applying structured critical thinking to AI tools, evaluating AI outputs, and navigating bias in machine-generated content.</p>
+  <div class="card-meta">
+    <span class="pill">Mar 2026</span>
+    <span class="pill">ID: CC-WMVVOA5Q</span>
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="programming">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#064e3b;color:#63b3ff">SL</div>
+    <div>
+      <h3>Java Intermediate</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Advanced Java course covering OOP design patterns, collections, exception handling, file I/O, and intermediate-level algorithms.</p>
+  <div class="card-meta">
+    <span class="pill">Mar 2026</span>
+    <span class="pill">ID: CC-DYOEVWFR</span>
+    <span class="pill">Programming</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">SL</div>
+    <div>
+      <h3>Machine Learning for Beginners</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Covered supervised and unsupervised learning, model evaluation, regression, classification, and an introduction to generative AI — foundational ML concepts made practical.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    <span class="pill">ID: CC-5JBYNKQU</span>
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">SL</div>
+    <div>
+      <h3>Prompt Engineering</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Studied effective prompt design for large language models, including zero-shot, few-shot, and chain-of-thought prompting strategies for real-world AI applications.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    <span class="pill">ID: CC-IBXTPWLS</span>
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="programming">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#064e3b;color:#63b3ff">SL</div>
+    <div>
+      <h3>Introduction to SQL</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Mastered relational database fundamentals: SELECT queries, JOINs, GROUP BY, subqueries, and data manipulation using MySQL syntax.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    <span class="pill">ID: CC-LXXVUQGI</span>
+    <span class="pill">Programming</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="programming">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#064e3b;color:#63b3ff">SL</div>
+    <div>
+      <h3>Introduction to Java</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Foundational Java course covering syntax, variables, control flow, OOP basics, and introductory data structures.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    <span class="pill">ID: CC-WZDY0Q5I</span>
+    <span class="pill">Programming</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="programming">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#064e3b;color:#63b3ff">SL</div>
+    <div>
+      <h3>Coding Foundations (Python, HTML, MySQL)</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Multi-language foundational course covering Python scripting, HTML web structure, and MySQL database queries.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    <span class="pill">ID: CC-MSCXFPBG</span>
+    <span class="pill">Programming</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="programming">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#064e3b;color:#63b3ff">SL</div>
+    <div>
+      <h3>Introduction to Python</h3>
+      <p class="card-kicker" style="margin:0">Sololearn</p>
+    </div>
+  </div>
+  <p>Core Python programming course covering variables, data types, control flow, functions, and file handling — the language at the heart of AI and data science.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    <span class="pill">ID: CC-KD0X37IR</span>
+    <span class="pill">Programming</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">HP</div>
+    <div>
+      <h3>Data Science and Analytics</h3>
+      <p class="card-kicker" style="margin:0">HP LIFE</p>
+    </div>
+  </div>
+  <p>HP LIFE course covering data science workflows, exploratory data analysis, statistical thinking, and applying analytics to solve real business problems.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">HP</div>
+    <div>
+      <h3>AI for Beginners</h3>
+      <p class="card-kicker" style="margin:0">HP LIFE</p>
+    </div>
+  </div>
+  <p>Introduction to AI concepts and practical applications covering machine learning basics, automation, and AI ethics — certified by HP LIFE.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="professional">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#1e3a5f;color:#63b3ff">HP</div>
+    <div>
+      <h3>Professional Networking for Career Goals</h3>
+      <p class="card-kicker" style="margin:0">HP LIFE</p>
+    </div>
+  </div>
+  <p>Course on building strategic professional networks, leveraging platforms like LinkedIn, and aligning networking with long-term career growth objectives.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    
+    <span class="pill">Professional</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="professional">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#1e3a5f;color:#63b3ff">HP</div>
+    <div>
+      <h3>Agile Project Management</h3>
+      <p class="card-kicker" style="margin:0">HP LIFE</p>
+    </div>
+  </div>
+  <p>Comprehensive coverage of Agile methodology, Scrum frameworks, sprint planning, and iterative development practices used in modern tech teams.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    
+    <span class="pill">Professional</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="ai">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#0c2340;color:#63b3ff">AW</div>
+    <div>
+      <h3>AWS Certifications</h3>
+      <p class="card-kicker" style="margin:0">AWS Community Pakistan</p>
+    </div>
+  </div>
+  <p>Recognised by AWS Community Pakistan for completing certifications covering cloud fundamentals, AI and generative AI services on AWS, and practical cloud architecture principles.</p>
+  <div class="card-meta">
+    <span class="pill">2026</span>
+    
+    <span class="pill">AI</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="internship">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#1e1b4b;color:#63b3ff">AT</div>
+    <div>
+      <h3>Internship Certificate — Arch Technologies</h3>
+      <p class="card-kicker" style="margin:0">Arch Technologies</p>
+    </div>
+  </div>
+  <p>Official internship completion certificate from Arch Technologies, recognising two months of hands-on ML work including data preprocessing, model training, and evaluation.</p>
+  <div class="card-meta">
+    <span class="pill">Feb 2026</span>
+    
+    <span class="pill">Internship</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="internship">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#1e1b4b;color:#63b3ff">CA</div>
+    <div>
+      <h3>AI Internship Completion Certificate</h3>
+      <p class="card-kicker" style="margin:0">CodeAlpha</p>
+    </div>
+  </div>
+  <p>Official completion certificate from CodeAlpha's AI Internship Programme, recognising successful delivery of AI projects including chatbot development and applied machine learning.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    <span class="pill">ID: CA/DF1/32621</span>
+    <span class="pill">Internship</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="internship">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#1e1b4b;color:#63b3ff">CA</div>
+    <div>
+      <h3>AI Internship Letter of Recommendation</h3>
+      <p class="card-kicker" style="margin:0">CodeAlpha</p>
+    </div>
+  </div>
+  <p>Letter of recommendation from CodeAlpha endorsing strong performance in AI development, chatbot engineering, and applied machine learning during the internship programme.</p>
+  <div class="card-meta">
+    <span class="pill">Apr 2026</span>
+    <span class="pill">ID: CA/DF1/32621</span>
+    <span class="pill">Internship</span>
+  </div>
+</article>
+<article class="card cert-card" data-cat="internship">
+  <div class="cert-card-top">
+    <div class="cert-logo" style="background:#1e1b4b;color:#63b3ff">CA</div>
+    <div>
+      <h3>Machine Learning Internship Certificate</h3>
+      <p class="card-kicker" style="margin:0">CodeAlpha</p>
+    </div>
+  </div>
+  <p>Completion certificate from CodeAlpha's 3-month ML internship, awarded for developing production-grade ML models across NLP, computer vision, and audio processing domains.</p>
+  <div class="card-meta">
+    <span class="pill">2024</span>
+    
+    <span class="pill">Internship</span>
+  </div>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact">
+    <div class="section-inner" data-reveal>
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Let's build something <em>great</em></h2>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-intro">Have an AI app, chatbot, automation system, website, surveillance AI, or custom model idea? Fill the form and your project inquiry will open with a polished message already prepared from your details.</p>
+          <div class="contact-items">
+            <a class="contact-item" href="https://wa.me/923405055603?text=Hi%20Nouman%2C%20I%20want%20to%20discuss%20an%20AI%20project." target="_blank" rel="noopener">Direct Project Inquiry</a>
+            <a class="contact-item" href="tel:+923405055603">+92 340 5055603</a>
+            <a class="contact-item" href="https://www.linkedin.com/in/noumanshakeil/" target="_blank" rel="noopener">linkedin.com/in/noumanshakeil</a>
+            <a class="contact-item" href="https://github.com/noumanshakeil/" target="_blank" rel="noopener">github.com/noumanshakeil</a>
+            <div class="contact-item">Islamabad, Pakistan</div>
+          </div>
+        </div>
+        <form class="form" id="contact-form" action="https://wa.me/923405055603" method="get">
+          <div class="form-row">
+            <div><label class="form-label" for="f-name">Name</label><input class="form-input" id="f-name" name="name" type="text" required placeholder="Your name"></div>
+            <div><label class="form-label" for="f-phone">Contact Number</label><input class="form-input" id="f-phone" name="phone" type="tel" required placeholder="+1 / +44 / +92 ..."></div>
+          </div>
+          <div class="form-row">
+            <div><label class="form-label" for="f-service">Service Needed</label><input class="form-input" id="f-service" name="service" type="text" required placeholder="Chatbot / App / Website / AI automation..."></div>
+            <div><label class="form-label" for="f-budget">Budget / Timeline</label><input class="form-input" id="f-budget" name="budget" type="text" placeholder="$300, urgent, this month..."></div>
+          </div>
+          <div>
+            <label class="form-label" for="f-message">Project Details</label>
+            <textarea class="form-textarea" id="f-message" name="message" required placeholder="Tell me what you want to build, your business type, goals, and any must-have features..."></textarea>
+          </div>
+          <p id="form-status" class="form-status" role="status"></p>
+          <button class="btn btn-primary" type="submit">Submit Inquiry</button>
+          <p class="pm-desc" style="margin:8px 0 0;font-size:.82rem">Without JavaScript, use <a href="https://wa.me/923405055603?text=Hi%20Nouman%2C%20I%20want%20to%20discuss%20an%20AI%20project." target="_blank" rel="noopener">Direct Project Inquiry</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
   </main>
-  <script>
-    function scrollHashTarget() {
-      if (!location.hash) return;
-      const id = location.hash.slice(1);
-      if (!id) return;
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    if (location.hash === "#privacy-policy" || location.hash) {
-      requestAnimationFrame(scrollHashTarget);
-      window.addEventListener("load", scrollHashTarget);
-    }
-  </script>
+
+  <footer class="site-footer">
+    <p>© 2026 Muhammad Nouman Shakeel · Built with passion in Islamabad</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/noumanshakeil/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/noumanshakeil/" target="_blank" rel="noopener">GitHub</a>
+      <a href="#privacy-policy">Privacy policy</a>
+      <a href="#privacy-reviewer-and-humanizer">Reviewer &amp; Humanizer</a>
+      <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a>
+      <a href="https://wa.me/923405055603" target="_blank" rel="noopener">Contact</a>
+    </div>
+  </footer>
+  </div>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/motion.js"></script>
 </body>
 </html>

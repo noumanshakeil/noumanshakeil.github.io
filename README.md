@@ -1,44 +1,29 @@
-Public download host for **PocketMind** Windows packages, plus product privacy policies.
+# Muhammad Nouman Shakeel — portfolio
 
-## Live site
+Static GitHub Pages site for **Muhammad Nouman Shakeel** (Founder PocketMind · Co-founder CodexBridge · AI Engineer @ Zindex) with a first-class apps catalogue.
+
+## Live
 
 https://noumanshakeil.github.io/
 
-## Privacy policy (PocketMind: AI Receptionist Studio)
+## Locked privacy URLs
 
-https://noumanshakeil.github.io/#privacy-policy
+- PocketMind: AI Receptionist Studio — https://noumanshakeil.github.io/#privacy-policy
+- PocketMind AI: Reviewer And Humanizer — https://noumanshakeil.github.io/#privacy-reviewer-and-humanizer
+- Brand mark — https://noumanshakeil.github.io/brand/pocketmind-logo-mark.png
 
-Source of truth is `store-listing/privacy.html` and in-app `#/privacy` on
-`noumanshakeil/ai-receptionist-platform` (`main`). Use this URL in Microsoft
-Partner Center for the Receptionist Studio Store listing.
+Android Hybrid AI policy (moved so it does not overwrite the Studio store hash): https://noumanshakeil.github.io/#privacy-hybrid-ai
 
-## Privacy policy (Reviewer And Humanizer)
+Suite app policies: `privacy-localchat.html`, `privacy-imagelab.html`, `privacy-voicelab.html`, `privacy-characters.html`.
 
-https://noumanshakeil.github.io/#privacy-reviewer-and-humanizer
+## Hosting notes
 
-## Store package URL (Hybrid AI x64 NSIS)
+Fully static. Hash navigation. Relative assets. Empty `.nojekyll`. Custom `404.html`. Fonts and GSAP/Lenis are self-hosted — no CDN or analytics.
 
-https://noumanshakeil.github.io/downloads/1.0.0/PocketMind-Hybrid-AI_1.0.0_x64-setup.exe
+## Removed Windows installers
 
-## Upload binaries (from your Windows PC)
+These former download URLs **404** by design (binaries were deleted; no replacements were invented):
 
-```powershell
-cd $HOME\noumanshakeil.github.io   # or wherever you cloned this repo
-git pull
-
-$payload = "D:\nexus-ai-deep-fixed\distribution\windows-desktop\payload"
-$dest = ".\downloads\1.0.0"
-
-Copy-Item "$payload\PocketMind Hybrid AI_1.0.0_x64-setup.exe" `
-  "$dest\PocketMind-Hybrid-AI_1.0.0_x64-setup.exe" -Force
-Copy-Item "$payload\PocketMind Hybrid AI_1.0.0_x64_en-US.msi" `
-  "$dest\PocketMind-Hybrid-AI_1.0.0_x64_en-US.msi" -Force
-Copy-Item "$payload\PocketMind Hybrid AI.exe" `
-  "$dest\PocketMind-Hybrid-AI.exe" -Force
-
-git add downloads/1.0.0
-git commit -m "Add PocketMind Hybrid AI 1.0.0 Windows installers"
-git push
-```
-
-Do **not** commit the full `bin\llama.cpp` tree to GitHub Pages (too large). Ship runtimes in the tester zip / separate release.
+- https://noumanshakeil.github.io/downloads/1.0.0/PocketMind-Hybrid-AI_1.0.0_x64-setup.exe
+- https://noumanshakeil.github.io/downloads/1.0.0/PocketMind-Hybrid-AI_1.0.0_x64_en-US.msi
+- https://noumanshakeil.github.io/downloads/1.0.0/PocketMind-Hybrid-AI.exe
