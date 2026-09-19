@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PocketMind — Downloads &amp; Privacy</title>
-  <meta name="description" content="PocketMind product downloads and privacy policies, including PocketMind AI: Reviewer And Humanizer." />
+  <meta name="description" content="PocketMind product downloads and privacy policies, including PocketMind: AI Receptionist Studio." />
   <style>
     :root {
       --bg0: #070a0c;
@@ -16,6 +16,10 @@
       --accent-dim: #16a34a;
       --card: #0c1210;
       --teal: #2bb0a6;
+      --paper: #f3efe6;
+      --ink: #1c1915;
+      --ink-soft: #5c564c;
+      --clay: #9a4318;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -145,29 +149,98 @@
       font-size: 0.88rem;
       line-height: 1.5;
     }
-    #privacy-policy {
+    #privacy-policy,
+    #privacy-reviewer-and-humanizer {
       scroll-margin-top: 1.5rem;
       margin-top: 3rem;
       padding-top: 0.5rem;
     }
-    #privacy-policy .policy-body {
+    #privacy-reviewer-and-humanizer .policy-body {
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    #privacy-policy .policy-body ul {
+    #privacy-reviewer-and-humanizer .policy-body ul {
       margin: 0.4rem 0 0.8rem 1.1rem;
       padding: 0;
     }
-    #privacy-policy .policy-body li { margin: 0.3rem 0; }
-    #privacy-policy .policy-body strong { color: var(--text); }
+    #privacy-reviewer-and-humanizer .policy-body li { margin: 0.3rem 0; }
+    #privacy-reviewer-and-humanizer .policy-body strong { color: var(--text); }
+    #privacy-reviewer-and-humanizer .policy-meta,
     #privacy-policy .policy-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       margin: 0.75rem 0 1.25rem;
     }
-    #privacy-policy a { color: var(--teal); }
+    #privacy-reviewer-and-humanizer a { color: var(--teal); }
+
+    /* Studio policy matches store-listing/privacy.html + in-app #/privacy */
+    #privacy-policy.studio-policy {
+      background: var(--paper);
+      color: var(--ink);
+      border-color: #e0d8c8;
+      padding: 1.75rem 1.6rem 1.85rem;
+    }
+    #privacy-policy .studio-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    #privacy-policy .studio-head img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: #fffdf8;
+      border: 1px solid #e8e0d2;
+    }
+    #privacy-policy .studio-kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 700;
+      margin: 0;
+    }
+    #privacy-policy h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: 1.7rem;
+      color: var(--ink);
+      margin: 0;
+    }
+    #privacy-policy .policy-meta .pill {
+      border-color: #d9d0c0;
+      color: var(--ink-soft);
+      background: #fffdf8;
+    }
+    #privacy-policy .policy-body {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    #privacy-policy .policy-body p { margin: 0 0 0.9rem; }
+    #privacy-policy .policy-body h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin: 1.35rem 0 0.45rem;
+    }
+    #privacy-policy .policy-body ul {
+      margin: 0.35rem 0 0.9rem 1.15rem;
+      padding: 0;
+    }
+    #privacy-policy .policy-body li { margin: 0.35rem 0; }
+    #privacy-policy .policy-body code,
+    #privacy-policy .policy-body .url {
+      color: var(--clay);
+      font-size: 0.82rem;
+    }
+    #privacy-policy a { color: var(--clay); }
+
     footer {
       margin-top: 2.5rem;
       color: #6d8074;
@@ -181,6 +254,7 @@
     <nav aria-label="Site">
       <a href="#downloads">Downloads</a>
       <a href="#privacy-policy">Privacy policy</a>
+      <a href="#privacy-reviewer-and-humanizer">Reviewer &amp; Humanizer</a>
     </nav>
 
     <p class="brand">PocketMind</p>
@@ -231,9 +305,78 @@
       Local inference also needs llama.cpp runtimes (CPU/CUDA/Vulkan) from the desktop payload package.
     </p>
 
-    <section id="privacy-policy" class="card" aria-labelledby="privacy-heading">
+    <section id="privacy-policy" class="card studio-policy" aria-labelledby="privacy-heading">
+      <div class="studio-head">
+        <img src="brand/pocketmind-logo-mark.png" alt="" width="40" height="40" />
+        <div>
+          <p class="studio-kicker">PocketMind: AI Receptionist Studio</p>
+          <h2 id="privacy-heading">Privacy policy</h2>
+        </div>
+      </div>
+      <div class="policy-meta">
+        <span class="pill">Publisher: PocketMind</span>
+        <span class="pill">Effective 18 September 2026</span>
+        <span class="pill">support.pocketmind@gmail.com</span>
+      </div>
+      <div class="policy-body">
+        <h3>What this app is</h3>
+        <p>
+          PocketMind: AI Receptionist Studio is a Windows desktop and web studio for building, testing, and deploying
+          custom AI receptionists for client businesses. The receptionist can answer questions from the facts you store,
+          take messages, and (when you connect a number) answer the phone through Retell AI. It is an AI system. It is
+          not a human receptionist.
+        </p>
+
+        <h3>Data we store on your machine or your API</h3>
+        <p>
+          The studio stores workspace accounts, client business profiles (hours, services, address, FAQs, documents you
+          upload), agent configuration, conversation transcripts, leads, appointments, and encrypted provider API keys
+          you paste in Settings. Default local installs use SQLite on the computer that runs the API. You can point
+          <code>DATABASE_URL</code> at Postgres you control.
+        </p>
+
+        <h3>Network destinations (no hidden traffic)</h3>
+        <ul>
+          <li>Your own PocketMind API (the URL you configure as <code>PUBLIC_API_URL</code>).</li>
+          <li>The LLM provider whose key you paste (OpenAI, Anthropic, DeepSeek, Groq, OpenRouter, Mistral, xAI, or Gemini) — only when a conversation needs a model.</li>
+          <li>Retell AI — only if you add a Retell key and sync a phone channel.</li>
+          <li>Your SMTP host — only if you set <code>SMTP_*</code> so owner alerts and support mail can be sent.</li>
+          <li>
+            Support mail to <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a> when you use Send feedback. Without SMTP, the app opens your mail client
+            instead of sending from our servers.
+          </li>
+        </ul>
+        <p>The app does not include analytics SDKs, ad networks, or sample/demo malware.</p>
+
+        <h3>AI disclosure</h3>
+        <p>
+          Agents can tell callers and chat visitors they are an AI receptionist (on by default). You can turn that
+          sentence off, but you remain responsible for any local notice rules. Model output can be wrong. Confirmed FAQs
+          and the business profile are the facts of record; unconfirmed template answers are not used.
+        </p>
+
+        <h3>Children</h3>
+        <p>
+          This product is for business operators, not for children. We do not knowingly collect data from children under
+          13. Microsoft Store age rating is expected to be PEGI 3 / ESRB Everyone after you complete Partner Center’s
+          questionnaire — the questionnaire is not something this repository can file for you.
+        </p>
+
+        <h3>Contact</h3>
+        <p>
+          Privacy and support: <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a>.
+          You can also use Send feedback inside the app (shell and Settings).
+        </p>
+        <p style="margin-bottom:0">
+          Permanent URL for this policy:<br />
+          <span class="url">https://noumanshakeil.github.io/#privacy-policy</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="privacy-reviewer-and-humanizer" class="card" aria-labelledby="reviewer-privacy-heading">
       <p class="brand" style="margin-bottom:0.35rem">PocketMind AI: Reviewer And Humanizer</p>
-      <h2 id="privacy-heading">Privacy policy</h2>
+      <h2 id="reviewer-privacy-heading">Privacy policy</h2>
       <div class="policy-meta">
         <span class="pill">Publisher: PocketMind</span>
         <span class="pill">Last updated: 2026-09-18</span>
@@ -281,9 +424,9 @@
           <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a>
         </p>
         <p style="margin-bottom:0">
-          Permanent URL for this policy:
+          URL for this policy:
           <br />
-          <span class="url">https://noumanshakeil.github.io/#privacy-policy</span>
+          <span class="url">https://noumanshakeil.github.io/#privacy-reviewer-and-humanizer</span>
         </p>
       </div>
     </section>
@@ -291,15 +434,22 @@
     <footer>
       PocketMind ·
       <a href="#privacy-policy">Privacy policy</a> ·
+      <a href="#privacy-reviewer-and-humanizer">Reviewer &amp; Humanizer</a> ·
       <a href="mailto:support.pocketmind@gmail.com">support.pocketmind@gmail.com</a>
       · Hosted on GitHub Pages
     </footer>
   </main>
   <script>
-    // Ensure deep-link #privacy-policy scrolls after load (GitHub Pages / browsers)
-    if (location.hash === '#privacy-policy') {
-      const el = document.getElementById('privacy-policy');
-      if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    function scrollHashTarget() {
+      if (!location.hash) return;
+      const id = location.hash.slice(1);
+      if (!id) return;
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    if (location.hash === "#privacy-policy" || location.hash) {
+      requestAnimationFrame(scrollHashTarget);
+      window.addEventListener("load", scrollHashTarget);
     }
   </script>
 </body>

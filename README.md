@@ -1,15 +1,20 @@
-Public download host for **PocketMind** Windows packages, plus the
-**Code Review Assistant** privacy policy.
+Public download host for **PocketMind** Windows packages, plus product privacy policies.
 
 ## Live site
 
 https://noumanshakeil.github.io/
 
-## Privacy policy (Code Review Assistant)
+## Privacy policy (PocketMind: AI Receptionist Studio)
 
 https://noumanshakeil.github.io/#privacy-policy
 
-Use this URL in Microsoft Partner Center for the Store listing privacy policy field.
+Source of truth is `store-listing/privacy.html` and in-app `#/privacy` on
+`noumanshakeil/ai-receptionist-platform` (`main`). Use this URL in Microsoft
+Partner Center for the Receptionist Studio Store listing.
+
+## Privacy policy (Reviewer And Humanizer)
+
+https://noumanshakeil.github.io/#privacy-reviewer-and-humanizer
 
 ## Store package URL (Hybrid AI x64 NSIS)
 
