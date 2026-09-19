@@ -476,9 +476,9 @@ button, input, textarea { font: inherit; }
   text-transform: uppercase;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
-.hero-chip-a { top: 8%; left: -8%; background: var(--signal); color: #fff; }
-.hero-chip-b { bottom: 18%; right: -6%; }
-.hero-chip-c { bottom: 6%; left: 6%; background: var(--flare); color: #fff; }
+.hero-chip-a { top: 16px; left: 16px; background: var(--signal); color: #fff; }
+.hero-chip-b { top: 16px; right: 16px; }
+.hero-chip-c { bottom: 16px; left: 16px; background: var(--flare); color: #fff; }
 
 /* ABOUT */
 .about-grid,
@@ -490,7 +490,7 @@ button, input, textarea { font: inherit; }
 }
 .about-portrait {
   margin: 0;
-  border-radius: 28px;
+  border-radius: 18px;
   overflow: hidden;
   background: #d9d3c4;
   box-shadow: 0 24px 50px rgba(18, 17, 15, 0.1);
@@ -661,12 +661,13 @@ button, input, textarea { font: inherit; }
 .app-film {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.06);
+  gap: 2px;
+  padding: 2px;
+  background: #11100e;
 }
 .app-film img {
   width: 100%;
-  height: 72px;
+  height: 96px;
   object-fit: cover;
 }
 .app-card .card-body {
@@ -1036,8 +1037,9 @@ body.nav-open { overflow: hidden; }
   .catalogue-grid { grid-template-columns: 1fr; }
   .hero-portrait { justify-self: start; width: min(420px, 100%); }
   .hero-portrait-plate { transform: none; aspect-ratio: 1; }
-  .hero-chip-a { left: 8px; }
-  .hero-chip-b { right: 8px; }
+  .hero-chip-a,
+  .hero-chip-b,
+  .hero-chip-c { position: absolute; }
   .pm-feature-grid,
   .privacy-list { grid-template-columns: 1fr 1fr; }
   .exp-item { grid-template-columns: 1fr; }
